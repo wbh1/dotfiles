@@ -1,0 +1,68 @@
+#!/bin/zsh
+
+# Self
+alias pcsetup="ansible-playbook $HOME/github/wbh1/setup_pc/playbook.yml"
+
+# Installed via mise
+# if (( $+commands[bat] )); then
+#   alias cat="bat"
+# fi
+
+if (( $+commands[nvim] )); then
+  alias vim="nvim"
+fi
+
+# vscode wayland
+alias vscode="/usr/bin/code --ozone-platform=wayland"
+
+# K8s
+alias k=kubectl
+alias kctx=kubectx
+alias kns=kubens
+
+# Linode
+alias lin=linode-cli
+
+# Git
+alias gsync="gcm && glum && gp"
+
+# Todoist
+alias td="todoist"
+alias today='td cl --filter today | cut -d " " -f "5-"'
+## Reschedule today's remaining work tasks to tomorrow
+alias tdr="td sync && td --csv l -f '(today | overdue) & #work' | cut -d ',' -f 1 | xargs -I{} -n1 todoist m -d tomorrow {}"
+
+# Mac specific
+if [ "$(uname)" = "Darwin" ]; then
+  alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+  alias cpssh="pbcopy < ~/.ssh/id_rsa.pub"
+  # courtesy of Matt Dennison / Donald Lehman
+  alias kickeaa='sudo pkill -9 -i "aztwatchdog|aztservice|AZTClient" && dscacheutil -flushcache'
+fi
+
+# alias vaultlogin="vault login -method ldap username=${USER}"
+vault-login() {
+  ADDR=https://vault.linode.com:8200
+  if [[ $1 == *"dev"* ]] ; then
+      ADDR=https://vault.dev.linode.com:8200
+  fi
+  export VAULT_TOKEN=`VAULT_ADDR=$ADDR vault login -field token -method=oidc username=$USER`
+  export VAULT_ADDR=$ADDR
+}
+
+ov() {
+  DIR=$(fd --type directory --exact-depth 2 --base-directory /Users/whegedus --relative-path '' bits github | fzf)
+  if [[ $? -eq 0 && -n "$DIR" ]]; then
+    cd $HOME/$DIR
+    lvim .
+  else
+    echo "Cancelled..."
+  fi
+}
+
+# Clipboard
+alias xclippy="xclip -i -sel clip"
+
+alias jv="jira issue view"
+alias js="jira issue search"
+alias oy="jira issue search"

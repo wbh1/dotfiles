@@ -1,0 +1,21 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Will Hegedus
+	email = whegedus@akamai.com
+[url "ssh://git@bits.linode.com/"]
+ 	insteadOf = https://bits.linode.com/
+[pull]
+	rebase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+ [url "ssh://git@salt-kvdata/ops/salt-kvdata.git"]
+  insteadOf = ssh://git@bits.linode.com/ops/salt-kvdata.git
+[url "ssh://git@ceph-mixins/SRE-Storage/ceph-mixins.git"]
+  insteadOf = ssh://git@bits.linode.com/SRE-Storage/ceph-mixins.git
+
+[alias]
+    lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'

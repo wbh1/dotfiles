@@ -1,0 +1,8 @@
+set shiftwidth=2
+set autoindent
+set smartindent
+set number
+set expandtab
+set wrap
+syntax on
+colorscheme nord

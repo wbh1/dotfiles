@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/whegedus/github/wbh1/setup_pc/roles/pkgs/vars'
+let g:netrw_dirhist_6='/Users/whegedus/github/wbh1/setup_pc/roles/pkgs'
+let g:netrw_dirhist_5='/Users/whegedus/github/wbh1/setup_pc/roles'
+let g:netrw_dirhist_4='/Users/whegedus/github/wbh1/setup_pc'
+let g:netrw_dirhist_3='/Users/whegedus/bits/ops/salt-pillar/openvas'
+let g:netrw_dirhist_2='/Users/whegedus/bits/ops/salt-pillar'
+let g:netrw_dirhist_1='/Users/whegedus/bits/ops/ansible-playbooks'
+let g:netrw_dirhist_0='/Users/whegedus/bits/ops/terraform-observability-team'
+let g:netrw_dirhist_9='/Users/whegedus/bits/ops/salt-pillar/infra/networking'
+let g:netrw_dirhist_8='/Users/whegedus/.ansible'
