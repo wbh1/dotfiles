@@ -31,12 +31,6 @@ export PATH
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 
-# Set theme
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Fix `ls` colors for Solarized Dark theme
-# eval `dircolors $HOME/.dircolors`
-
 if (( $+commands[mise] )); then
   eval "$(mise activate zsh)"
   # required so that commands from mise show in +commands var
