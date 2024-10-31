@@ -115,7 +115,7 @@ fi
 
 (( $+commands[bashcompinit] )) && bashcompinit
 
-export EDITOR=lvim
+export EDITOR=nvim
 
 # Perl garbage
 if [ -d "$HOME/perl5" ]; then
