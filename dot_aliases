@@ -54,7 +54,7 @@ ov() {
   DIR=$(fd --type directory --exact-depth 2 --base-directory /Users/whegedus --relative-path '' bits github | fzf)
   if [[ $? -eq 0 && -n "$DIR" ]]; then
     cd $HOME/$DIR
-    lvim .
+    nvim .
   else
     echo "Cancelled..."
   fi
