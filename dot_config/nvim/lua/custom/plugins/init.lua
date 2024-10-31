@@ -35,4 +35,29 @@ return {
       { ']B', '<cmd>BufferLineMoveNext<cr>', desc = 'Move buffer next' },
     },
   },
+  {
+    'akinsho/toggleterm.nvim',
+    config = function()
+      require('toggleterm').setup {
+        open_mapping = [[<c-\>]],
+        shade_terminals = false,
+        -- add --login so ~/.zprofile is loaded
+        -- https://vi.stackexchange.com/questions/16019/neovim-terminal-not-reading-bash-profile/16021#16021
+        shell = 'zsh --login',
+        direction = 'float',
+        float_opts = {
+          border = 'curved',
+        },
+      }
+    end,
+    keys = {
+      { [[<C-\>]] },
+      { '<leader>0', '<Cmd>2ToggleTerm<Cr>', desc = 'Terminal #2' },
+      {
+        '<leader>td',
+      },
+    },
+  },
 }
+
+-- vim: ts=2 sts=2 sw=2 et
