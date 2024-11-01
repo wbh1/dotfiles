@@ -623,7 +623,9 @@ require('lazy').setup({
         -- clangd = {},
         gopls = {},
         pyright = {},
-        yamlls = {},
+        yamlls = {
+          autostart = false,
+        },
         terraformls = {},
         jsonnet_ls = {},
 
