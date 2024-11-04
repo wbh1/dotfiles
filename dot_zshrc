@@ -172,7 +172,6 @@ if (( ${+WSL_DISTRO_NAME} )); then
 fi
 
 export VAULT_ADDR="https://vault.linode.com:8200"
-export FZF_ALT_C_COMMAND="fd --type directory --exact-depth 2 --base-directory $HOME --relative-path '' bits github"
 export TZ_LIST="UTC;US/Pacific,West Coast;Poland;Asia/Calcutta,India"
 source ~/.aliases
 
