@@ -59,6 +59,16 @@ return {
       },
     },
   },
+  {
+    'ellisonleao/glow.nvim',
+    config = function()
+      require('glow').setup {
+        border = 'double',
+        width = 120,
+      }
+    end,
+    cmd = 'Glow',
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
