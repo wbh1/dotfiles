@@ -50,19 +50,27 @@ vault-login() {
   export VAULT_ADDR=$ADDR
 }
 
-ov() {
+cdd() {
   DIR=$(fd --type directory --exact-depth 2 --base-directory /Users/whegedus --relative-path '' bits github | fzf)
   if [[ $? -eq 0 && -n "$DIR" ]]; then
     cd $HOME/$DIR
-    nvim -c Neotree
   else
     echo "Cancelled..."
   fi
 }
 
+ov() {
+  cdd
+  nvim -c Neotree
+}
+
 # Clipboard
 alias xclippy="xclip -i -sel clip"
 
+# Jira
 alias jv="jira issue view"
 alias js="jira issue search"
 alias oy="jira issue search"
+
+# Chezmoi
+alias ce="chezmoi edit"
