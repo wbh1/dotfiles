@@ -44,7 +44,7 @@ act = "0.2.68"
 infracost = "0.10.39"
 pandoc = "latest"
 chezmoi = "latest"
-argocd = "2.12.2"
+argocd = "2.12.7"
 
 [settings]
 experimental = true

@@ -1,0 +1,5 @@
+{{ if ne .chezmoi.os "darwin" }}
+Library/Application Support/lazygit/
+{{ else }}
+.config/lazygit/
+{{ end }}
