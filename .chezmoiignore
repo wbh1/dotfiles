@@ -1,5 +1,5 @@
 {{ if ne .chezmoi.os "darwin" }}
-Library/Application Support/lazygit/
+Library/
 {{ else }}
 .config/lazygit/
 {{ end }}

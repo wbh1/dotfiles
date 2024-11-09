@@ -45,6 +45,8 @@ infracost = "0.10.39"
 pandoc = "latest"
 chezmoi = "latest"
 argocd = "2.12.7"
+starship = "1.21.1"
+neovim = "0.10.2"
 
 [settings]
 experimental = true
