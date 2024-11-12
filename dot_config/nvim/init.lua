@@ -903,6 +903,9 @@ require('lazy').setup({
       -- Session management
       require('mini.sessions').setup()
 
+      -- Make buffers behave more like tabs in VSCode
+      require('mini.bufremove').setup()
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
