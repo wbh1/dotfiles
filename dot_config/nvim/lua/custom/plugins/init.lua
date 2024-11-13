@@ -69,6 +69,15 @@ return {
     end,
     cmd = 'Glow',
   },
+  {
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
