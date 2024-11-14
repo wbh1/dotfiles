@@ -3,5 +3,7 @@
 git:
   fetchAll: false
 
+{{- if eq .chezmoi.group "staff" }}
 services:
-  'bits.linode.com': 'github:bits.linode.com'
+  '{{ .ghe_url }}': 'github:{{ .ghe_url }}'
+{{- end }}

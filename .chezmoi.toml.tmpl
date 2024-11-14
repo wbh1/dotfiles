@@ -3,3 +3,10 @@
     autoPush = true
 [edit]
     apply = true
+[data]
+    email = {{ promptString "email" | quote }}
+    {{- if eq .chezmoi.group "staff" }}
+    vault_url = {{ promptString "vault_url with port" | quote }}
+    ghe_url = {{ promptString "GitHub Enterprise URL" | quote }}
+    {{- end }}
+ 

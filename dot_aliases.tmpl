@@ -40,15 +40,14 @@ if [ "$(uname)" = "Darwin" ]; then
   alias kickeaa='sudo pkill -9 -i "aztwatchdog|aztservice|AZTClient" && dscacheutil -flushcache'
 fi
 
+{{- if eq .chezmoi.group "staff" }}
 # alias vaultlogin="vault login -method ldap username=${USER}"
 vault-login() {
-  ADDR=https://vault.linode.com:8200
-  if [[ $1 == *"dev"* ]] ; then
-      ADDR=https://vault.dev.linode.com:8200
-  fi
+  ADDR=https://{{ .vault_url }}
   export VAULT_TOKEN=`VAULT_ADDR=$ADDR vault login -field token -method=oidc username=$USER`
   export VAULT_ADDR=$ADDR
 }
+{{- end }}
 
 cdd() {
   DIR=$(fd --type directory --exact-depth 2 --base-directory /Users/whegedus --relative-path '' bits github | fzf)

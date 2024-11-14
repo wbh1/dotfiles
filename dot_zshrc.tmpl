@@ -171,7 +171,9 @@ if (( ${+WSL_DISTRO_NAME} )); then
   export KUBECONFIG="${$(ls ~/.kube/config.d/*)//$'\n'/:}"
 fi
 
-export VAULT_ADDR="https://vault.linode.com:8200"
+{{- if eq .chezmoi.group "staff" }}
+export VAULT_ADDR="https://{{ .vault_url }}"
+{{- end }}
 export TZ_LIST="UTC;US/Pacific,West Coast;Poland;Asia/Calcutta,India"
 source ~/.aliases
 
