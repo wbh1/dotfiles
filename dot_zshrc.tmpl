@@ -173,6 +173,27 @@ fi
 
 {{- if eq .chezmoi.group "staff" }}
 export VAULT_ADDR="https://{{ .vault_url }}"
+
+vicmec-disk(){
+  for cluster in $(tsh kube ls | grep victoriametrics | awk '{gsub("-", ".", $1); print $1 ".linode.com";}'); do echo "\n\n$cluster Usage:" && promtool query instant --http.config.file=$HOME/.config/promtool/mtls.yaml "https://prometheus.$cluster" 'sum by (svc) (
+      label_replace(
+        kubelet_volume_stats_used_bytes{persistentvolumeclaim=~"vmstorage.+"},
+        "svc",
+        "$1",
+        "persistentvolumeclaim",
+        "([^0-9]+)-[0-9]+"
+      )
+    )
+  /
+    sum by (svc) (
+      label_replace(
+        kubelet_volume_stats_capacity_bytes,
+        "svc",
+        "$1",
+        "persistentvolumeclaim",
+        "([^0-9]+)-[0-9]+"
+      )
+    )'; done
 {{- end }}
 export TZ_LIST="UTC;US/Pacific,West Coast;Poland;Asia/Calcutta,India"
 source ~/.aliases
