@@ -914,7 +914,7 @@ require('lazy').setup({
       require('mini.surround').setup()
 
       -- Session management
-      require('mini.sessions').setup()
+      require('mini.sessions').setup { autoread = true }
 
       -- Make buffers behave more like tabs in VSCode
       require('mini.bufremove').setup()
