@@ -3,10 +3,15 @@
     autoPush = true
 [edit]
     apply = true
+[merge]
+    command = "nvim"
+    args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Source }}`}}", "{{`{{ .Target }}`}}"]
 [data]
-    email = {{ promptString "email" | quote }}
+    email = {{ promptStringOnce . "email" "Email to use in things like Git" | quote }}
     {{- if eq .chezmoi.group "staff" }}
-    vault_url = {{ promptString "vault_url with port" | quote }}
-    ghe_url = {{ promptString "GitHub Enterprise URL" | quote }}
+    {{- $infraURL := promptStringOnce . "infra_url" "Base URL to use as a suffix for various internal infra" }}
+    infra_url = {{ $infraURL | quote }}
+    vault_url = {{ printf "vault.%s:8200" $infraURL | quote }}
+    ghe_url = {{ promptStringOnce . "ghe_url" "GitHub Enterprise URL" | quote }}
     {{- end }}
  

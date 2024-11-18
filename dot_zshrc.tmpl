@@ -175,7 +175,7 @@ fi
 export VAULT_ADDR="https://{{ .vault_url }}"
 
 vicmec-disk(){
-  for cluster in $(tsh kube ls | grep victoriametrics | awk '{gsub("-", ".", $1); print $1 ".linode.com";}'); do echo "\n\n$cluster Usage:" && promtool query instant --http.config.file=$HOME/.config/promtool/mtls.yaml "https://prometheus.$cluster" 'sum by (svc) (
+  for cluster in $(tsh kube ls | grep victoriametrics | awk '{gsub("-", ".", $1); print $1 "{{ .infra_url }}";}'); do echo "\n\n$cluster Usage:" && promtool query instant --http.config.file=$HOME/.config/promtool/mtls.yaml "https://prometheus.$cluster" 'sum by (svc) (
       label_replace(
         kubelet_volume_stats_used_bytes{persistentvolumeclaim=~"vmstorage.+"},
         "svc",
