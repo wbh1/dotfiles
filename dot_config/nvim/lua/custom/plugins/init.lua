@@ -68,7 +68,8 @@ return {
     config = function()
       require('glow').setup {
         border = 'double',
-        width = 120,
+        width = 300,
+        width_ratio = 0.8,
       }
     end,
     cmd = 'Glow',
@@ -79,7 +80,10 @@ return {
       attach_mode = 'global',
       backends = { 'lsp', 'treesitter', 'markdown', 'man' },
       show_guides = true,
+      filter_kind = false,
       layout = {
+        min_width = { 40, 0.2 },
+        max_width = { 100, 0.4 },
         resize_to_content = false,
         win_opts = {
           winhl = 'Normal:NormalFloat,FloatBorder:NormalFloat,SignColumn:SignColumnSB',
