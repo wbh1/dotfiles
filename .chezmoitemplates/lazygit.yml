@@ -3,6 +3,9 @@
 git:
   fetchAll: false
 
+os:
+  editPreset: 'nvim-remote'
+
 {{- if eq .chezmoi.group "staff" }}
 services:
   '{{ .ghe_url }}': 'github:{{ .ghe_url }}'
