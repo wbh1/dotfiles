@@ -64,17 +64,6 @@ return {
     },
   },
   {
-    'ellisonleao/glow.nvim',
-    config = function()
-      require('glow').setup {
-        border = 'double',
-        width = 300,
-        width_ratio = 0.8,
-      }
-    end,
-    cmd = 'Glow',
-  },
-  {
     'stevearc/aerial.nvim',
     opts = {
       attach_mode = 'global',
@@ -120,6 +109,15 @@ return {
       -- See Configuration section for options
     },
     -- See Commands section for default commands if you want to lazy load on them
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
 }
 
