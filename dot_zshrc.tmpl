@@ -61,10 +61,6 @@ if (( $+commands[rbenv] )); then
   eval "$(rbenv init - zsh)"
 fi
 
-if (( $+commands[rye] )); then
-  source "$HOME/.rye/env"
-fi
-
 #if (( $+commands[op] )); then
 #  eval "$(op signin)"
 #fi
@@ -80,7 +76,7 @@ fi
 if (( $+commands[hss] )); then
   hss_repo=$(dirname $(ls -l ~/.hss.yml | awk '{print $11}'))
   # only update once a day
-  if [[ $(date +'%D') -eq $(date -r ${hss_repo}/.git +'%y') ]]; then 
+  if [[ $(date +'%D') -eq $(date -r ${hss_repo}/.git +'%y') ]]; then
     cd $(dirname $(ls -l ~/.hss.yml | awk '{print $11}')) && git pull -q upstream master
     cd -
   fi
