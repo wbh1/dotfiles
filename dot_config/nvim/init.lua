@@ -638,6 +638,7 @@ require('lazy').setup({
         -- clangd = {},
         gopls = {},
         pyright = {},
+        ruff = {},
         yamlls = {
           autostart = false,
         },
