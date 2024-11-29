@@ -47,7 +47,6 @@ chezmoi = "latest"
 argocd = "2.12.7"
 starship = "1.21.1"
 neovim = "0.10.2"
-"go:github.com/peterhellberg/swapi/cmd/swapi" = "latest"
 markdownlint-cli2 = "latest"
 "ubi:google/mtail" = "latest"
 
