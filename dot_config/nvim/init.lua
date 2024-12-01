@@ -639,6 +639,7 @@ require('lazy').setup({
         gopls = {},
         pyright = {},
         ruff = {},
+        jedi_language_server = {},
         yamlls = {
           autostart = false,
         },
