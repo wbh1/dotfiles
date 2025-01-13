@@ -1,0 +1,4 @@
+theme = nordfox
+command = "/usr/local/bin/tmux new -A -s work"
+window-padding-x = 5
+window-padding-y = 5
