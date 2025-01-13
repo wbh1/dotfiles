@@ -47,6 +47,11 @@ vault-login() {
   export VAULT_TOKEN=`VAULT_ADDR=$ADDR vault login -field token -method=oidc username=$USER`
   export VAULT_ADDR=$ADDR
 }
+
+# Login as root to an HSS match
+rhss() {
+  hss $1 -l root
+}
 {{- end }}
 
 cdd() {
