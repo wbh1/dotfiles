@@ -34,7 +34,7 @@ export PATH
 if (( $+commands[mise] )); then
   eval "$(mise activate zsh)"
   # required so that commands from mise show in +commands var
-  eval "$(mise hook-env -s zsh)"
+  # eval "$(mise hook-env -s zsh)"
 fi
 
 # Which plugins would you like to load?
