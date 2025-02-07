@@ -6,7 +6,7 @@ format = "$all"
 right_format = ""
 continuation_prompt = "[∙](bright-black) "
 scan_timeout = 30
-command_timeout = 500
+command_timeout = 1000
 add_newline = true
 follow_symlinks = true
 
@@ -403,7 +403,7 @@ disabled = false
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "red bold"
-stashed = '\$'
+stashed = '📦'
 ahead = "⇡"
 behind = "⇣"
 up_to_date = ""
