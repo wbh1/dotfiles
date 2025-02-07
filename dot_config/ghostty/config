@@ -1,4 +1,9 @@
 theme = nordfox
 command = "/usr/local/bin/tmux new -A -s work"
+window-height = 46
+window-width = 166
 window-padding-x = 5
 window-padding-y = 5
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+quick-terminal-position = center
+confirm-close-surface = false
