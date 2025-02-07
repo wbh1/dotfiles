@@ -6,7 +6,7 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        markdown = { 'markdownlint', 'vale' },
+        markdown = { 'markdownlint-cli2', 'vale' },
         text = { 'vale' },
         sh = { 'shellcheck' },
         python = { 'ruff' },
