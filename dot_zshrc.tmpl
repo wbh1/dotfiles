@@ -67,6 +67,11 @@ if (( $+commands[jira] )); then
   eval "$(jira completion zsh)"
 fi
 
+# I use rbenv for hss
+if (( $+commands[rbenv] )); then
+  eval "$(rbenv init - zsh)"
+fi
+
 if (( $+commands[hss] )); then
   hss_repo=$(dirname $(ls -l ~/.hss.yml | awk '{print $11}'))
   # only update once a day
