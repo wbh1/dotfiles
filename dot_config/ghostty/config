@@ -7,3 +7,4 @@ window-padding-y = 5
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 quick-terminal-position = center
 confirm-close-surface = false
+font-family = "JetBrainsMono Nerd Font Mono"
