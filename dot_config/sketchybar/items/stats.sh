@@ -7,6 +7,7 @@ cpu_percent=(
 	label=CPU%
 	label.color="$LABEL_COLOR"
 	icon="$CPU"
+	icon.font="$NERD_FONT:Bold:20.0"
 	icon.color="$BLUE"
 	update_freq=2
 	mach_helper="$HELPER"
@@ -18,7 +19,7 @@ sketchybar --add item cpu.percent right \
 memory=(label.font="$FONT:Heavy:12"
 	label.color="$LABEL_COLOR"
 	icon="$MEMORY"
-	icon.font="$NERD_FONT:Bold:16.0"
+	icon.font="$NERD_FONT:Bold:20.0"
 	icon.color="$GREEN"
 	update_freq=15
 	script="$PLUGIN_DIR/stats/scripts/ram.sh"
@@ -32,7 +33,7 @@ disk=(
 	label.color="$LABEL_COLOR"
 	icon="$DISK"
 	icon.color="$MAROON"
-	icon.font="$NERD_FONT:Bold:16.0"
+	icon.font="$NERD_FONT:Bold:18.0"
 	update_freq=60
 	script="$PLUGIN_DIR/stats/scripts/disk.sh"
 )

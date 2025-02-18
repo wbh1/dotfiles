@@ -32,9 +32,9 @@ YABAI_GRID=􀧍
 
 # https://github.com/FelixKratz/SketchyBar/discussions/12?sort=top#discussioncomment-4623255
 BATTERY=
-CPU=
+CPU=󰻠
 DISK=
-MEMORY=﬙
+MEMORY=󰍛
 NETWORK=
 NETWORK_DOWN=
 NETWORK_UP=

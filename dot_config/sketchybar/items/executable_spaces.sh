@@ -30,7 +30,7 @@ done
 
 sketchybar   --add item       separator left                          \
              --set separator  icon=                                  \
-                              icon.font="MesloLGS NF:Regular:16.0" \
+                              icon.font="$NERD_FONT:Bold:16.0" \
                               background.padding_left=26              \
                               background.padding_right=15             \
                               label.drawing=off                       \
