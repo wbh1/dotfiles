@@ -33,6 +33,7 @@ starship = "1.21.1"
 neovim = "0.10.2"
 markdownlint-cli2 = "latest"
 fd = "latest"
+node = "latest"
 
 [settings]
 experimental = true
