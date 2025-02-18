@@ -4,6 +4,7 @@ bun = "latest"
 goreleaser = "latest"
 "go:github.com/oz/tz" = "latest"
 uv = "latest"
+pipx = "latest"
 jq = "1.6"
 bat = "0.24.0"
 vault = "1.13.2+ent"
@@ -33,6 +34,11 @@ starship = "1.21.1"
 neovim = "0.10.2"
 markdownlint-cli2 = "latest"
 fd = "latest"
+node = "22.6.0"
+1password = "latest"
+github-cli = "latest"
+tmux = "3.5a"
+"pipx:ansible" = { version = "latest", uvx = "false", pipx_args = "--include-deps" }
 
 [settings]
 experimental = true
