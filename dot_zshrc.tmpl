@@ -18,12 +18,10 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 if [ "$uname_output" = "Darwin" ]; then
-  PATH=$PATH:$HOME/Library/Python/3.9/bin
+  eval "$(/opt/homebrew/bin/brew shellenv)";
 fi
 
-PATH=$PATH:~/go/bin:/usr/local/go/bin
-
-PATH="$HOME/.poetry/bin:$PATH"
+# PATH=$PATH:~/go/bin:/usr/local/go/bin
 
 export PATH
 
