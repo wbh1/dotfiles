@@ -141,7 +141,6 @@ fi
 
 {{- if eq .chezmoi.group "staff" }}
 export TZ_LIST="UTC;US/Pacific,West Coast;Poland;Asia/Calcutta,India"
-export MISE_ENV="work"
 export VAULT_ADDR="https://{{ .vault_url }}"
 
 vicmec-disk(){
