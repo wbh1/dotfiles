@@ -2,4 +2,5 @@
 Library/
 {{ else }}
 .config/lazygit/
+.config/espanso/
 {{ end }}
