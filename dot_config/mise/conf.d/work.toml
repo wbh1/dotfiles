@@ -16,6 +16,12 @@ argocd = "2.12.7"
 "ubi:google/mtail" = "latest"
 tilt = "latest"
 "ubi:grafana/grizzly" = "0.7.1"
+ruby = "3.4.2"
+"gem:hss" = "latest"
+"go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
 
 [settings]
 experimental = true
+
+[alias]
+sloth = "asdf:linode-obs/asdf-sloth"

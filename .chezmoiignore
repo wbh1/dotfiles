@@ -4,3 +4,6 @@ Library/
 .config/lazygit/
 .config/espanso/
 {{ end }}
+{{- if ne .chezmoi.group "staff" }}
+.config/mise/conf.d/work.toml
+{{- end -}}
