@@ -36,7 +36,6 @@ fd = "latest"
 node = "22.6.0"
 1password = "latest"
 github-cli = "latest"
-tmux = "3.5a"
 "pipx:ansible" = { version = "latest", uvx = "false", pipx_args = "--include-deps" }
 cheat = "latest"
 
