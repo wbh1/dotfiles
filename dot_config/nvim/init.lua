@@ -398,9 +398,11 @@ require('lazy').setup({
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
+        defaults = {
+          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+        },
         pickers = {
           live_grep = {
-            -- file_ignore_patterns = { 'node_modules', '.git', '.venv' },
             additional_args = function(_)
               return { '--hidden' }
             end,
