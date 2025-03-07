@@ -1,5 +1,5 @@
 theme = nordfox
-command = "/usr/local/bin/tmux new -A -s work"
+command = "/opt/homebrew/bin/tmux new -A -s work"
 window-height = 46
 window-width = 166
 window-padding-x = 5
