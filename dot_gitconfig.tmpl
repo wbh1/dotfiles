@@ -14,6 +14,7 @@
 	excludesFile = ~/.gitignore
 [alias]
     lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+    count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; net += $1 - $2; loc += $1 + $2 } END { printf \"added lines: %s, removed lines: %s, net lines: %s, total lines: %s\\n\", add, subs, net, loc }' #"
 
 {{- if eq .chezmoi.group "staff" }}
 [url "ssh://git@{{ .ghe_url }}/"]
