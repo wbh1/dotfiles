@@ -52,6 +52,16 @@ vault-login() {
 rhss() {
   hss $1 -l root
 }
+
+# Search Jira issues
+js() {
+  if [[ -z "${1// }"]]; then
+    echo "Must provide 'text' to search."
+    exit 1
+  else
+    jira issue list 'text ~ "$1"'
+  fi
+}
 {{- end }}
 
 cdd() {
