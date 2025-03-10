@@ -58,7 +58,7 @@ alias jv="jira issue view"
 
 # Search Jira issues
 js() {
-  if [[ -z "${1// }"]]; then
+  if [[ -z "${1// }" ]]; then
     echo "Must provide 'text' to search."
     exit 1
   else
