@@ -54,17 +54,8 @@ rhss() {
 }
 
 # Jira
-alias jv="jira issue view"
-
-# Search Jira issues
-js() {
-  if [[ -z "${1// }" ]]; then
-    echo "Must provide 'text' to search."
-    exit 1
-  else
-    jira issue list -q 'text ~ "$1"'
-  fi
-}
+alias jiv="jira issue view"
+alias jis="jira issue search"
 {{- end }}
 
 cdd() {
