@@ -59,7 +59,7 @@ js() {
     echo "Must provide 'text' to search."
     exit 1
   else
-    jira issue list 'text ~ "$1"'
+    jira issue list -q 'text ~ "$1"'
   fi
 }
 {{- end }}
