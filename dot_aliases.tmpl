@@ -53,6 +53,9 @@ rhss() {
   hss $1 -l root
 }
 
+# Jira
+alias jv="jira issue view"
+
 # Search Jira issues
 js() {
   if [[ -z "${1// }"]]; then
@@ -81,11 +84,6 @@ ov() {
 
 # Clipboard
 alias xclippy="xclip -i -sel clip"
-
-# Jira
-alias jv="jira issue view"
-alias js="jira issue search"
-alias oy="jira issue search"
 
 # Chezmoi
 alias ce="chezmoi edit"
