@@ -7,6 +7,7 @@ yarn = "1"
 pnpm = "latest"
 vale = "latest"
 "go:github.com/prometheus/alertmanager/cmd/amtool" = "latest"
+promtool = "2.55.1"
 git-cliff = "2.5.0"
 sloth = "0.12.0"
 "go:github.com/neilotoole/sq" = "0.48.3"
@@ -16,9 +17,10 @@ argocd = "2.12.7"
 "ubi:google/mtail" = "latest"
 tilt = "latest"
 "ubi:grafana/grizzly" = "0.7.1"
+"ubi:grafana/loki" = { version = "2.9.13", matching = "logcli-darwin-arm", exe="logcli-darwin-arm64", rename_exe="logcli" }
 ruby = "3.4.2"
 "gem:hss" = "latest"
-"go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
+# "go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
 
 [settings]
 experimental = true
