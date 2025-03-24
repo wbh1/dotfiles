@@ -34,7 +34,12 @@ export PATH
 # Rust
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
+# # # # # #
 
+# fzf
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules' --exclude 'go' --exclude '*Google Drive' --exclude 'Library' --exclude 'site-packages'"
+
+# # # # # #
 # if (( $+commands[mise] )); then
 #   eval "$(mise activate zsh)"
 #   # required so that commands from mise show in +commands var
