@@ -37,7 +37,7 @@ export PATH
 # # # # # #
 
 # fzf
-export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules' --exclude 'go' --exclude '*Google Drive' --exclude 'Library' --exclude 'site-packages'"
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git' --exclude 'node_modules' --exclude 'go' --exclude '*Google Drive*' --exclude 'Library' --exclude 'site-packages' --exclude '.local/share/mise*' --exclude '.cache/*'"
 
 # # # # # #
 # if (( $+commands[mise] )); then
