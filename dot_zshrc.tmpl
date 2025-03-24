@@ -21,6 +21,10 @@ if [ "$uname_output" = "Darwin" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)";
 fi
 
+if [ -d "${KREW_ROOT:-$HOME/.krew}/bin" ]; then
+  PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+fi
+
 # PATH=$PATH:~/go/bin:/usr/local/go/bin
 
 export PATH
