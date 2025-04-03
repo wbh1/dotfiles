@@ -2,6 +2,8 @@
 
 git:
   fetchAll: false
+  paging:
+    externalDiffCommand: difft --color=always
 
 os:
   editPreset: 'nvim-remote'
