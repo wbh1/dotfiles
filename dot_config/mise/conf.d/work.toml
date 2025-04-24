@@ -13,6 +13,8 @@ sloth = "0.12.0"
 "go:github.com/neilotoole/sq" = "0.48.3"
 infracost = "0.10.39"
 pandoc = "latest"
+# Needed for pandoc PDF export
+tinytex = "latest"
 argocd = "2.12.7"
 "ubi:google/mtail" = "latest"
 tilt = "latest"
@@ -20,7 +22,7 @@ tilt = "latest"
 "ubi:grafana/loki" = { version = "2.9.13", matching = "logcli-darwin-arm", exe="logcli-darwin-arm64", rename_exe="logcli" }
 ruby = "3.4.2"
 "gem:hss" = "latest"
-# "go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
+"go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
 
 [settings]
 experimental = true
