@@ -28,11 +28,11 @@ sketchybar --bar height=35 \
   sticky=on \
   padding_right=12 \
   padding_left=12 \
-  corner_radius=9 \
-  y_offset=5 \
-  margin=16 \
+  corner_radius=0 \
+  y_offset=0 \
+  margin=0 \
   blur_radius=0 \
-  notch_width=0 \
+  notch_width=200 \
   \
   --default updates=when_shown \
   icon.font="$FONT:Bold:14.0" \
