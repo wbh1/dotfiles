@@ -39,3 +39,13 @@ matches:
 
   - trigger: ":tshighstate"
     replace: cat /var/lib/prometheus/node-exporter/saltHighState.prom | tail -1 | awk '{split($2,a,"."); print a[1];}' | xargs -I % sh -c 'date -d @%'
+
+  - trigger: ":hbactest"
+    form: |
+        ipa hbactest --user=[[user]] --service=[[service]] --host="$(hostname -f)"
+    form_fields:
+      service:
+        type: choice
+        values:
+          - ssh
+          - sudo
