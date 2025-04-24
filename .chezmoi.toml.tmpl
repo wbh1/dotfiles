@@ -6,6 +6,8 @@
 [merge]
     command = "nvim"
     args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Source }}`}}", "{{`{{ .Target }}`}}"]
+[diff]
+    pager = "delta"
 [data]
     email = {{ promptStringOnce . "email" "Email to use in things like Git" | quote }}
     {{- if eq .chezmoi.group "staff" }}
@@ -14,4 +16,4 @@
     vault_url = {{ printf "vault.%s:8200" $infraURL | quote }}
     ghe_url = {{ promptStringOnce . "ghe_url" "GitHub Enterprise URL" | quote }}
     {{- end }}
- 
+
