@@ -39,6 +39,7 @@ node = "22.6.0"
 github-cli = "latest"
 "pipx:ansible" = { version = "latest", uvx = "false", pipx_args = "--include-deps" }
 cheat = "latest"
+delta = "latest"
 
 [settings]
 experimental = true
