@@ -1,4 +1,4 @@
-theme = nordfox
+theme = nord
 command = "/opt/homebrew/bin/tmux new -A -s work"
 window-height = 46
 window-width = 166
