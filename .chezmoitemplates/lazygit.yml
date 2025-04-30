@@ -4,10 +4,13 @@ git:
   fetchAll: false
   paging:
     colorArg: always
-    pager: delta --dark --paging=never
+    pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 
 os:
   editPreset: 'nvim-remote'
+
+gui:
+  nerdFontsVersion: '3'
 
 {{- if eq .chezmoi.group "staff" }}
 services:
