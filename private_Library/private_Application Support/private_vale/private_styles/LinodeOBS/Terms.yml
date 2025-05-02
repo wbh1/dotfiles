@@ -1,0 +1,11 @@
+extends: substitution
+message: Use '%s' instead of '%s'.
+level: error
+ignorecase: true
+action:
+  name: suggest
+swap:
+  # https://prometheus.io/docs/introduction/faq/#what-is-the-plural-of-prometheus
+  "[Pp]romethe(is|uses)": "Prometheis|Prometheus instances"
+  "[Vv]ic[Mm]ec": VictoriaMetrics
+
