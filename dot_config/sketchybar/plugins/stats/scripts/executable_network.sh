@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-NETWORK_INTERFACE="en7"
+NETWORK_INTERFACE="en10"
 
 UPDOWN=$(ifstat -i "$NETWORK_INTERFACE" -b 0.1 1 | tail -n1)
 DOWN=$(echo "$UPDOWN" | awk "{ print \$1 }" | cut -f1 -d ".")

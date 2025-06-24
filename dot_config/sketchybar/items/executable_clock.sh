@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
 
-sketchybar --add item calendar q \
-    --set calendar icon= \
+sketchybar --add item clock e \
+    --set clock icon= \
     icon.font.family="$NERD_FONT" \
-    label.padding_right=200 \
+    icon.padding_left=200 \
     label.font="$FONT:Black:14.0" \
     label.highlight_color=$BLUE \
     label.width=dynamic \
-    label.align=left \
+    label.align=right \
     background.padding_left=0 \
-    update_freq=60 \
-    script="$PLUGIN_DIR/calendar.sh" \
+    update_freq=1 \
+    script="$PLUGIN_DIR/clock.sh" \
     click_script="$PLUGIN_DIR/zen.sh"
