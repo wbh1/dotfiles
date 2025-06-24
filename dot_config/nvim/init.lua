@@ -399,7 +399,7 @@ require('lazy').setup({
         --   },
         -- },
         defaults = {
-          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+          file_ignore_patterns = { 'node_modules', '.git/', '.venv' },
         },
         pickers = {
           live_grep = {
@@ -762,7 +762,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'goimports', 'gofmt' },
-        markdown = { 'markdownlint-cli2' },
+        markdown = { 'markdownlint-cli2', 'prettier' },
         sh = { 'shfmt' },
         ['_'] = { 'trim_whitespace' },
         -- Conform can also run multiple formatters sequentially
@@ -798,6 +798,7 @@ require('lazy').setup({
             'rafamadriz/friendly-snippets',
             config = function()
               require('luasnip.loaders.from_vscode').lazy_load()
+              require('luasnip.loaders.from_vscode').load_standalone { path = './snippets/personal.code-snippets' }
             end,
           },
         },
