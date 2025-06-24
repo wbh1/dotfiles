@@ -26,7 +26,7 @@ helm = "3.13.0"
 python = "3.11.10"
 ruff = "0.6.9"
 go-jsonnet = "0.20.0"
-lazygit = "0.44.1"
+lazygit = "latest"
 rust = "latest"
 act = "0.2.68"
 chezmoi = "latest"
@@ -40,6 +40,14 @@ github-cli = "latest"
 "pipx:ansible" = { version = "latest", uvx = "false", pipx_args = "--include-deps" }
 cheat = "latest"
 delta = "latest"
+vale = "3.11"
+"npm:prettier" = "latest"
+"pipx:linode-cli" = "latest"
+"cargo:trippy" = "latest"
 
 [settings]
 experimental = true
+idiomatic_version_file_enable_tools = ["node"]
+
+[settings.npm]
+bun = true

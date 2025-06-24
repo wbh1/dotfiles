@@ -23,6 +23,8 @@ tilt = "latest"
 ruby = "3.4.2"
 "gem:hss" = "latest"
 "go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
+pkl = "0.28.2"
+cue = "latest"
 
 [settings]
 experimental = true
