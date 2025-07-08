@@ -9,6 +9,13 @@ PLUGIN_DIR="$HOME/.config/sketchybar/plugins" # Directory where all the plugin s
 
 PADDINGS=3 # All paddings use this value (icon, label, background)
 
+BUILTIN_DISPLAY=0
+# shellcheck disable=SC2034,SC2155
+BUILTIN_DISPLAY="$(
+  system_profiler -json SPDisplaysDataType | jq '.SPDisplaysDataType[0].spdisplays_ndrvs | map(select(.spdisplays_main == "spdisplays_yes")) | .[].spdisplays_display_type' | grep -q -v built-in-liquid-retina
+  echo $?
+)"
+
 # Setting up and starting the helper process
 HELPER=git.felix.helper
 killall helper
@@ -56,10 +63,12 @@ source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
 #source "$ITEM_DIR/aerospaces.sh"
 source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/apple_music.sh"
 
 # Center
 # source "$ITEM_DIR/spotify.sh"
 source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/linode.sh"
 
 # Right
 source "$ITEM_DIR/brew.sh"
