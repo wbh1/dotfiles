@@ -26,26 +26,26 @@ plugins:
       - -c
       - "kubectl annotate applications -n argocd $NAME argocd.argoproj.io/refresh=hard"
 
-  # disable-auto-sync:
-  #   shortCut: Shift-J
-  #   confirm: false
-  #   scopes:
-  #     - apps
-  #   description: Disable argocd sync
-  #   command: kubectl
-  #   background: false
-  #   args:
-  #     - patch
-  #     - applications
-  #     - -n
-  #     - argocd
-  #     - $NAME
-  #     - "--type=json"
-  #     - '-p=[{"op":"replace", "path": "/spec/syncPolicy", "value": {}}]'
+  disable-auto-sync:
+    shortCut: Shift-D
+    confirm: true
+    scopes:
+      - apps
+    description: Disable argocd sync
+    command: kubectl
+    background: false
+    args:
+      - patch
+      - applications
+      - -n
+      - argocd
+      - $NAME
+      - "--type=json"
+      - '-p=[{"op":"replace", "path": "/spec/syncPolicy", "value": {}}]'
 
   enable-auto-sync:
-    shortCut: Shift-B
-    confirm: false
+    shortCut: Shift-S
+    confirm: true
     scopes:
       - apps
     description: Enable argocd sync
