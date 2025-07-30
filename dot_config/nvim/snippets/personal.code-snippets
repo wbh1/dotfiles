@@ -1,0 +1,14 @@
+// vim: set ft=json
+{
+  "DocsyAlert": {
+    "scope": "markdown",
+    "prefix": "alert",
+    "body": [
+      "<!-- prettier-ignore-start -->",
+      "{{< alert title=\"Note\" color=\"primary\" >}}",
+      "CALLOUT_TEXT",
+      "{{< /alert >}}",
+      "<!-- prettier-ignore-end -->"
+    ]
+  }
+}
