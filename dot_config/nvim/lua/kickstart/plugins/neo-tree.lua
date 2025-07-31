@@ -11,7 +11,9 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree action=focus<CR>', desc = 'NeoTree focus', silent = true },
+    -- Reveal opens Neotree and focuses current file
+    { '|', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = function()
     local renderer = require 'neo-tree.ui.renderer'
