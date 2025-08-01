@@ -1172,5 +1172,4 @@ symbol = ''
 when = "! chezmoi verify"
 description = "Shows if Chezmoi has uncommitted or unapplied changes"
 style = 'italic #D08770'
-detect_folders = [".config"]
 
