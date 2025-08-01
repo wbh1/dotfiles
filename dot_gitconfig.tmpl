@@ -5,6 +5,17 @@
 	email = {{ .email | quote }}
 [pull]
 	rebase = false
+[interactive]
+    diffFilter = delta --color-only
+[include]
+    path = ~/.config/delta/themes.gitconfig
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    features = arctic-fox
+    side-by-side = false
+[merge]
+    conflictstyle = zdiff3
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -12,6 +23,7 @@
 	required = true
 [core]
 	excludesFile = ~/.gitignore
+	pager = delta
 [init]
 	defaultBranch = main
 [alias]
