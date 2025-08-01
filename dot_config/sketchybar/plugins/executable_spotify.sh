@@ -57,10 +57,12 @@ update ()
     curl -s --max-time 20 "$COVER" -o /tmp/cover.jpg
     if [ "$ARTIST" == "" ]; then
       args+=(--set spotify.title label="$TRACK" drawing=on \
+             --set spotify.anchor label="$TRACK" label.drawing=on \
              --set spotify.album label="Podcast" drawing=on \
              --set spotify.artist label="$ALBUM" drawing=on  )
     else
       args+=(--set spotify.title label="$TRACK" drawing=on \
+             --set spotify.anchor label="\"$TRACK\" by $ARTIST" label.drawing=on \
              --set spotify.album label="$ALBUM" drawing=on \
              --set spotify.artist label="$ARTIST" drawing=on)
     fi
