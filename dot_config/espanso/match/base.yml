@@ -9,6 +9,13 @@ matches:
         type: date
         params:
           format: "%Y-%m-%d"
+  - trigger: ":isodate"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%+"
 
   - trigger: ":pubkey"
     replace: "{{key}}"
@@ -16,7 +23,7 @@ matches:
       - name: key
         type: shell
         params:
-          cmd: cat ~/.ssh/id_rsa.pub
+          cmd: op item list --categories 'SSH Key' --vault Employee --favorite --format=json | op item get - --fields public_key
 
   - trigger: ":hss"
     replace: 'tmuxer -c "hss {}"'

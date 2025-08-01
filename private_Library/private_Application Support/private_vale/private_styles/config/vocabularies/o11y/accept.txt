@@ -6,6 +6,7 @@ Artifactory
 BPF
 datacenter
 datacenters
+dc_short
 eBPF
 GitHub
 highstate
@@ -15,12 +16,15 @@ ipservice
 Jira
 JSON
 kernelspace
+Kube
 kube-prometheus
 Linmon
 Linmons
 Miro
 mtail
+mTLS
 OBJ
+(?i)orgs
 objectstorage
 opensource
 PagerDuty
@@ -34,7 +38,7 @@ promtool
 Python
 remote_url
 remote_write
-repo
+(?i)repo
 runbook
 runbooks
 Salt
@@ -46,6 +50,7 @@ textfiles
 timeseries
 TSDB
 tsh
+URL
 userspace
 VictoriaMetrics
 vmagent
