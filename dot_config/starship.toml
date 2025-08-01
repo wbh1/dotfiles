@@ -646,6 +646,9 @@ symbol = "⬢ "
 style = "blue bold"
 disabled = false
 
+[mise]
+disabled = true
+
 [nats]
 format = "[$symbol($name )]($style)"
 symbol = "✉️ "
@@ -1162,5 +1165,12 @@ detect_extensions = ["zig"]
 detect_files = []
 detect_folders = []
 
-[custom]
+[custom.chezmoi]
+command = "echo \" $(chezmoi status | wc -l | awk '{print$1}') unsaved dotfile changes!\""
+symbol = ''
+# the module will be shown if the shell returns a 0 status code from executing it.
+when = "! chezmoi verify"
+description = "Shows if Chezmoi has uncommitted or unapplied changes"
+style = 'italic #D08770'
+detect_folders = [".config"]
 
