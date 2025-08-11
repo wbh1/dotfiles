@@ -1,0 +1,62 @@
+tap "felixkratz/formulae"
+tap "homebrew/services"
+# Plugin for encrypting files with age and PIV tokens such as YubiKeys
+brew "age-plugin-yubikey"
+# Automatic configure script builder
+brew "autoconf"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Get/set bluetooth power and discoverable state
+brew "blueutil"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Tool to report network interface bandwidth
+brew "ifstat"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
+brew "iperf3"
+# YAML Parser
+brew "libyaml"
+# Utility for directing compilation
+brew "make"
+# 'traceroute' and 'ping' in a single tool
+brew "mtr"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
+# Change macOS audio source from the command-line
+brew "switchaudio-osx"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Custom macOS statusbar with shell plugin, interaction and graph support
+brew "felixkratz/formulae/sketchybar"
+# Android SDK component
+cask "android-platform-tools"
+# Cross-platform Text Expander written in Rust
+cask "espanso"
+# Calendar software
+cask "fantastical"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# To-do list
+cask "todoist-app"
