@@ -44,6 +44,7 @@ vale = "3.11"
 "npm:prettier" = "latest"
 "pipx:linode-cli" = "latest"
 "cargo:trippy" = "latest"
+tlrc = "latest"
 
 [settings]
 experimental = true
