@@ -5,9 +5,9 @@
     "prefix": "alert",
     "body": [
       "<!-- prettier-ignore-start -->",
-      "{{< alert title=\"Note\" color=\"primary\" >}}",
+      "{{% alert title=\"Note\" %}}",
       "CALLOUT_TEXT",
-      "{{< /alert >}}",
+      "{{% /alert %}}",
       "<!-- prettier-ignore-end -->"
     ]
   }
