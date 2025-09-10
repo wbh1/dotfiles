@@ -1,6 +1,6 @@
 extends: spelling
 message: "Did you really mean '%s'?"
-level: error
+level: warning
 filters:
   # You could make this more specific using something
   # like `\w+'s`, but this is what is was before.

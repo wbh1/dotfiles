@@ -10,7 +10,7 @@
 extends: existence
 message: '"%s" must contain one and only one space.'
 link: https://docs.gitlab.com/ee/development/documentation/styleguide.html#punctuation
-level: warning
+level: suggestion
 nonword: true
 tokens:
   - '[a-z][.?!,][A-Z]'
