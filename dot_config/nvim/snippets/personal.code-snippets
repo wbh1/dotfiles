@@ -10,5 +10,19 @@
       "{{% /alert %}}",
       "<!-- prettier-ignore-end -->"
     ]
+  },
+  "PrettierBlockIgnoreStart": {
+    "scope": "markdown",
+    "prefix": "prettier-ignore-start",
+    "body": [
+      "<!-- prettier-ignore-start -->",
+    ]
+  },
+  "PrettierBlockIgnoreEnd": {
+    "scope": "markdown",
+    "prefix": "prettier-ignore-end",
+    "body": [
+      "<!-- prettier-ignore-end -->"
+    ]
   }
 }
