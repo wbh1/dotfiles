@@ -757,8 +757,9 @@ require('lazy').setup({
         }
       end,
       formatters_by_ft = {
-        lua = { 'stylua' },
         go = { 'goimports', 'gofmt' },
+        json = { 'jq' },
+        lua = { 'stylua' },
         markdown = { 'markdownlint-cli2', 'prettier' },
         sh = { 'shfmt' },
         ['_'] = { 'trim_whitespace' },
