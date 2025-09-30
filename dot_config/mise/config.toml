@@ -31,7 +31,7 @@ rust = "latest"
 act = "0.2.68"
 chezmoi = "latest"
 starship = "latest"
-neovim = "0.11.3"
+neovim = "0.11.4"
 markdownlint-cli2 = "latest"
 fd = "latest"
 node = "22.6.0"
@@ -46,6 +46,7 @@ vale = "3.11"
 "cargo:trippy" = "latest"
 tlrc = "latest"
 claude = "latest"
+"npm:@github/copilot" = "latest"
 
 [settings]
 experimental = true
