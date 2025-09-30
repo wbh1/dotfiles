@@ -45,6 +45,7 @@ vale = "3.11"
 "pipx:linode-cli" = "latest"
 "cargo:trippy" = "latest"
 tlrc = "latest"
+claude = "latest"
 
 [settings]
 experimental = true
