@@ -505,6 +505,13 @@ require('lazy').setup({
         jedi_language_server = {},
         yamlls = {
           autostart = true,
+          -- disable YAML diagnostics on Saltstack files
+          on_attach = function(client, bufnr)
+            local filename = vim.api.nvim_buf_get_name(bufnr)
+            if filename:match '%.sls$' then
+              vim.diagnostic.enable(false, { bufnr = bufnr })
+            end
+          end,
         },
         vale_ls = {},
         shellcheck = {},
@@ -865,6 +872,11 @@ require('lazy').setup({
       auto_install = true,
       highlight = {
         enable = true,
+        -- disable treesitter highlighting on Saltstack files
+        disable = function(lang, buf)
+          local filename = vim.api.nvim_buf_get_name(buf)
+          return lang == 'yaml' and filename:match '%.sls$'
+        end,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
