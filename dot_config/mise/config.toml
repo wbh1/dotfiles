@@ -48,6 +48,7 @@ tlrc = "latest"
 claude = "latest"
 "npm:@github/copilot" = "latest"
 tree-sitter = "latest"
+glow = "latest"
 
 [settings]
 experimental = true
