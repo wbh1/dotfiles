@@ -1,8 +1,6 @@
 [tools]
 teleport-community = "14.0.3"
 pint = "0.61.2"
-just = "latest"
-node = "20"
 yarn = "1"
 pnpm = "latest"
 vale = "latest"
@@ -24,7 +22,7 @@ ruby = "3.4.2"
 "gem:hss" = "latest"
 "go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
 pkl = "0.28.2"
-cue = "latest"
+"ubi:tjhop/prometheus-mcp-server" = "latest"
 
 [settings]
 experimental = true
