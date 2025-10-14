@@ -147,7 +147,7 @@ if (( ${+WSL_DISTRO_NAME} )); then
 fi
 
 {{- if eq .chezmoi.group "staff" }}
-export TZ_LIST="UTC;US/Pacific,West Coast;Poland;Asia/Calcutta,India"
+export TZ_LIST="UTC;US/Mountain;US/Pacific,West Coast;Poland;Asia/Calcutta,India"
 export VAULT_ADDR="https://{{ .vault_url }}"
 
 vicmec-disk(){
