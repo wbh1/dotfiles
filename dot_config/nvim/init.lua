@@ -700,6 +700,7 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-cmdline',
     },
     config = function()
       -- See `:help cmp`
@@ -819,7 +820,7 @@ require('lazy').setup({
       }
 
       -- Session management
-      require('mini.sessions').setup { autoread = true }
+      require('mini.sessions').setup { autoread = false }
 
       -- Make buffers behave more like tabs in VSCode
       require('mini.bufremove').setup()

@@ -4,10 +4,39 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    indent = { enabled = true },
+    input = { enabled = true },
+    notifier = { enabled = true },
+    scope = { enabled = true },
+    scroll = { enabled = true },
+    statuscolumn = { enabled = false }, -- we set this in options.lua
+    words = { enabled = true },
+    dashboard = {
+      enabled = true,
+      preset = {
+        -- pick = function(cmd, opts)
+        --   return LazyVim.pick(cmd, opts)()
+        -- end,
+        header = [[
+        ⠀⠀⢀⣀⣤⣴⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⣈⠛⠿⣿⣿⣿⣿⡿⠿⠛⢃⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⢻⣷⣦⣌⠙⣉⣡⣤⣶⣾⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠘⣿⣿⣿⡆⢹⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⢻⣿⣿⣇⠘⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⢀⣀⠀⠀⠀
+        ⠀⠀⡉⠻⣿⠀⣿⡿⠟⠋⢁⡀⠀⠀⠠⣾⣿⣿⣿⡶⠄
+        ⠀⠀⢿⣶⣄⠀⢀⣀⣴⣾⣿⡇⠀⣷⣦⣈⠙⠛⢉⣠⣶
+        ⠀⠀⢸⣿⣿⡇⠸⣿⣿⣿⣿⡇⠀⣿⠿⠋⣠⢀⣿⣿⠟
+        ⠀⠀⠈⠻⣿⣿⠀⣿⣿⣿⡿⠃⠀⣡⣴⣿⡿⠸⠛⠁⠀
+        ⠀⠀⠀⢰⣌⠻⠀⠿⠋⢁⣤⣾⠀⣿⣿⠿⠃⠀⠀⠀⠀
+        ⠀⠀⠀⠸⣿⣷⡄⢰⣾⣿⣿⣿⠀⠟⠁⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠙⢿⣧⠘⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠙⠀⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+ ]],
+      },
+    },
     -- bigfile = { enabled = true },
     -- dashboard = { enabled = true },
     -- explorer = { enabled = true },
-    indent = { enabled = true },
     -- input = { enabled = true },
     -- notifier = {
     --   enabled = true,
