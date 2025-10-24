@@ -719,6 +719,20 @@ require('lazy').setup({
         },
       },
 
+      cmdline = {
+        enabled = true,
+        keymap = { preset = 'cmdline' },
+        completion = {
+          list = { selection = { preselect = false } },
+          menu = {
+            auto_show = function(ctx)
+              return vim.fn.getcmdtype() == ':'
+            end,
+          },
+          ghost_text = { enabled = true },
+        },
+      },
+
       completion = {
         accept = {
           -- experimental auto-brackets support
