@@ -46,7 +46,6 @@ vale = "3.11"
 "cargo:trippy" = "latest"
 tlrc = "latest"
 claude = "latest"
-"npm:@github/copilot" = "latest"
 tree-sitter = "latest"
 glow = "latest"
 
