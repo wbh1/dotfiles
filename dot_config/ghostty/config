@@ -1,5 +1,4 @@
 theme = nord
-command = "/opt/homebrew/bin/tmux new -A -s work"
 window-height = 46
 window-width = 166
 window-padding-x = 5
@@ -8,3 +7,12 @@ keybind = global:cmd+grave_accent=toggle_quick_terminal
 quick-terminal-position = center
 confirm-close-surface = false
 font-family = "JetBrainsMono Nerd Font Mono"
+
+keybind = ctrl+a>h=goto_split:left
+keybind = ctrl+a>j=goto_split:bottom
+keybind = ctrl+a>k=goto_split:top
+keybind = ctrl+a>l=goto_split:right
+
+keybind = ctrl+a>shift+'=new_split:down
+keybind = ctrl+a>shift+5=new_split:right
+keybind = ctrl+a>z=toggle_split_zoom
