@@ -69,6 +69,15 @@ cdd() {
   fi
 }
 
+cdc() {
+  DIR=$(fd --type directory --exact-depth 1 --base-directory $HOME --relative-path '' --hidden .config | fzf)
+  if [[ $? -eq 0 && -n "$DIR" ]]; then
+    cd $HOME/$DIR
+  else
+    echo "Cancelled..."
+  fi
+}
+
 # [o]pen [v]im
 ov() {
   cdd
