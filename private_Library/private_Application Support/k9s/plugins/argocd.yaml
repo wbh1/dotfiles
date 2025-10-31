@@ -19,12 +19,6 @@ plugins:
     description: Diff an ArgoCD Application
     scopes:
       - application
-    # args:
-    # - app
-    # - diff
-    # - $NAME
-    # - --app-namespace
-    # - $NAMESPACE
     command: zsh
     background: false
     args:
@@ -37,7 +31,7 @@ plugins:
     confirm: false
     scopes:
       - apps
-    description: Refresh a argocd app hard
+    description: Refresh a ArgoCD app hard
     command: bash
     background: false
     args:
@@ -49,7 +43,7 @@ plugins:
     confirm: true
     scopes:
       - apps
-    description: Disable argocd sync
+    description: Disable ArgoCD sync
     command: kubectl
     background: false
     args:
@@ -62,6 +56,7 @@ plugins:
       - '-p=[{"op":"replace", "path": "/spec/syncPolicy", "value": {}}]'
 
   # enable-auto-sync:
+  # # TODO: Find a shortcut that doesn't conflict with a built-in one
   #   shortCut: Shift-S
   #   confirm: true
   #   scopes:
