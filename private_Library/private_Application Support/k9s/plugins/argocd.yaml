@@ -1,5 +1,5 @@
 plugins:
-  argocd:
+  argocd-sync:
     shortCut: "s"
     description: Sync ArgoCD Application
     scopes:
@@ -14,6 +14,24 @@ plugins:
     background: true
     confirm: true
 
+  argocd-diff:
+    shortCut: "Shift-D"
+    description: Diff an ArgoCD Application
+    scopes:
+      - application
+    # args:
+    # - app
+    # - diff
+    # - $NAME
+    # - --app-namespace
+    # - $NAMESPACE
+    command: zsh
+    background: false
+    args:
+      - -c
+      - >-
+        KUBECTL_EXTERNAL_DIFF="difft --color always" argocd app diff $NAME --app-namespace $NAMESPACE | less -RK
+
   refresh-apps:
     shortCut: Shift-R
     confirm: false
@@ -27,7 +45,7 @@ plugins:
       - "kubectl annotate applications -n argocd $NAME argocd.argoproj.io/refresh=hard"
 
   disable-auto-sync:
-    shortCut: Shift-D
+    shortCut: Shift-S
     confirm: true
     scopes:
       - apps
@@ -43,19 +61,19 @@ plugins:
       - "--type=json"
       - '-p=[{"op":"replace", "path": "/spec/syncPolicy", "value": {}}]'
 
-  enable-auto-sync:
-    shortCut: Shift-S
-    confirm: true
-    scopes:
-      - apps
-    description: Enable argocd sync
-    command: kubectl
-    background: false
-    args:
-      - patch
-      - applications
-      - -n
-      - argocd
-      - $NAME
-      - --type=merge
-      - '-p={"spec":{"syncPolicy":{"automated":{"prune":true,"selfHeal":true},"syncOptions":["ApplyOutOfSyncOnly=true","CreateNamespace=true","PruneLast=true","PrunePropagationPolicy=foreground"]}}}'
+  # enable-auto-sync:
+  #   shortCut: Shift-S
+  #   confirm: true
+  #   scopes:
+  #     - apps
+  #   description: Enable argocd sync
+  #   command: kubectl
+  #   background: false
+  #   args:
+  #     - patch
+  #     - applications
+  #     - -n
+  #     - argocd
+  #     - $NAME
+  #     - --type=merge
+  #     - '-p={"spec":{"syncPolicy":{"automated":{"prune":true,"selfHeal":true},"syncOptions":["ApplyOutOfSyncOnly=true","CreateNamespace=true","PruneLast=true","PrunePropagationPolicy=foreground"]}}}'
