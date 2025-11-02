@@ -1,4 +1,8 @@
+{{ if eq .chezmoi.os "linux" }}
+config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
+{{ else }}
 theme = Nordfox
+{{ end }}
 window-height = 46
 window-width = 166
 window-padding-x = 5
