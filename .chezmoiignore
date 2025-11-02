@@ -5,6 +5,7 @@ Library/
 {{ else }}
 .config/lazygit/
 .config/espanso/
+.config/hypr/
 {{ end }}
 {{- if ne .chezmoi.group "staff" }}
 .config/mise/conf.d/work.toml
