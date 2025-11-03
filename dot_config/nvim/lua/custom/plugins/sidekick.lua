@@ -54,6 +54,14 @@ return {
       mode = { 'n', 'v' },
     },
     {
+      '<leader>ao',
+      function()
+        require('sidekick.cli').toggle { name = 'opencode', focus = true }
+      end,
+      desc = 'Sidekick OpenCode Toggle',
+      mode = { 'n', 'v' },
+    },
+    {
       '<leader>ap',
       function()
         require('sidekick.cli').select_prompt()
