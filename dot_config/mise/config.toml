@@ -50,6 +50,7 @@ tree-sitter = "latest"
 glow = "latest"
 "npm:@github/copilot" = "latest"
 opencode = "latest"
+yazi = "latest"
 
 [settings]
 experimental = true
