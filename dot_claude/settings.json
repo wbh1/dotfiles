@@ -1,0 +1,29 @@
+{
+  "enabledPlugins": {
+    "superpowers@superpowers-marketplace": true
+  },
+  "alwaysThinkingEnabled": true,
+  "permissions": {
+    "allow": [
+      "Bash(go test:*)",
+      "Bash(go build:*)",
+      "Bash(go mod:*)",
+      "Bash(go fmt:*)",
+      "Bash(go vet:*)",
+      "Bash(go run:*)",
+      "Bash(go list:*)",
+      "Bash(go get:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(make test:*)",
+      "Bash(make build:*)",
+      "Bash(pwd)",
+      "Skill(superpowers:*)",
+      "SlashCommand(/superpowers:*)",
+      "WebFetch(domain:code.claude.com)"
+    ]
+  }
+}
