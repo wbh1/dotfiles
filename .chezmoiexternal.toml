@@ -32,3 +32,11 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+
+["github/arcticicestudio/nord-tmux"]
+    type = "archive"
+    url = "https://github.com/nordtheme/tmux/archive/develop.tar.gz"
+    exact = true
+    exclude = ["**/.*", "**/*.md", "**/license", "**/*.js*"]
+    stripComponents = 1
+    refreshPeriod = "168h"
