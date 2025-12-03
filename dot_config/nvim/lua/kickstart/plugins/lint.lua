@@ -8,7 +8,7 @@ return {
       lint.linters_by_ft = {
         markdown = { 'markdownlint-cli2' },
         sh = { 'shellcheck' },
-        python = { 'ruff' },
+        python = {},
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
