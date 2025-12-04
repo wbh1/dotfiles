@@ -29,3 +29,18 @@ experimental = true
 
 [alias]
 sloth = "asdf:linode-obs/asdf-sloth"
+
+
+[tasks.gen-key]
+description = "Generate a new SSH key"
+usage = '''
+arg "<key-type>" help="What type of SSH key to generate" {
+  choices "internal" "deployed"
+}
+'''
+run = '''
+ssh-keygen -t rsa -b 2048 \
+  -P `op read --account "linode" "op://Employee/SSH Key Passphrase/password"` \
+  -C "`whoami`-${usage_key_type?}-`date +%Y-%m-%d`" \
+  -f ~/.ssh/${usage_key_type?}/`whoami`-${usage_key_type?}-`date +%Y-%m-%d`
+'''
