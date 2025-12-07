@@ -49,8 +49,8 @@ claude = "latest"
 tree-sitter = "latest"
 glow = "latest"
 "npm:@github/copilot" = "latest"
-opencode = "latest"
 yazi = "latest"
+"github:sst/opencode" = "latest"
 
 [settings]
 experimental = true
