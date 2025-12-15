@@ -1,2 +1,9 @@
+# Neovim sessions
 Session.vim
+
+# Claude Code
 .claude/
+
+# Mise
+mise.local.toml
+.mise.local.toml
