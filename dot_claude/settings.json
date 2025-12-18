@@ -1,8 +1,4 @@
 {
-  "enabledPlugins": {
-    "superpowers@superpowers-marketplace": true
-  },
-  "alwaysThinkingEnabled": true,
   "permissions": {
     "allow": [
       "Bash(go test:*)",
@@ -25,5 +21,11 @@
       "SlashCommand(/superpowers:*)",
       "WebFetch(domain:code.claude.com)"
     ]
-  }
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-marketplace": true,
+    "mise@o11y-tools": true,
+    "jutsu-mise@o11y-tools": false
+  },
+  "alwaysThinkingEnabled": true
 }
