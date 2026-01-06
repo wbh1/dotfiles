@@ -27,7 +27,7 @@ pkl = "0.28.2"
 [settings]
 experimental = true
 
-[alias]
+[tool_alias]
 sloth = "asdf:linode-obs/asdf-sloth"
 
 
