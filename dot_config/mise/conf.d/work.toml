@@ -14,15 +14,15 @@ pandoc = "latest"
 # Needed for pandoc PDF export
 tinytex = "latest"
 argocd = "2.12.7"
-"ubi:google/mtail" = "latest"
+"github:google/mtail" = "latest"
 tilt = "latest"
-"ubi:grafana/grizzly" = "0.7.1"
-"ubi:grafana/loki" = { version = "2.9.13", matching = "logcli-darwin-arm", exe="logcli-darwin-arm64", rename_exe="logcli" }
+"github:grafana/grizzly" = "0.7.1"
+"github:grafana/loki" = { version = "2.9.13", matching = "logcli-darwin-arm", exe="logcli-darwin-arm64", rename_exe="logcli" }
 ruby = "3.4.2"
 "gem:hss" = "latest"
 "go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
 pkl = "0.28.2"
-"ubi:tjhop/prometheus-mcp-server" = "latest"
+"github:tjhop/prometheus-mcp-server" = "latest"
 
 [settings]
 experimental = true
