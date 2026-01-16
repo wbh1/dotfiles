@@ -79,6 +79,11 @@ if (( $+commands[rbenv] )); then
   eval "$(rbenv init - zsh)"
 fi
 
+# fnox for secret mgmt (from mise creator)
+if (( $+commands[fnox] )); then
+  eval "$(fnox activate zsh)"
+fi
+
 if (( $+commands[hss] )); then
   hss_repo=$(dirname $(ls -l ~/.hss.yml | awk '{print $11}'))
   # only update once a day
