@@ -155,6 +155,11 @@ fi
 export TZ_LIST="UTC;US/Mountain;US/Pacific,West Coast;Poland;Asia/Calcutta,India"
 export VAULT_ADDR="https://{{ .vault_url }}"
 
+# SSH DNS zone completion with fzf
+if [[ -f ~/.ssh/ssh-dns-completion.zsh ]]; then
+    source ~/.ssh/ssh-dns-completion.zsh
+fi
+
 vicmec-disk(){
   for cluster in $(tsh kube ls | grep victoriametrics | awk '{gsub("-", ".", $1); print $1 ".{{ .infra_url }}";}'); do echo "\n\n$cluster Usage:" && promtool query instant --http.config.file=$HOME/.config/promtool/mtls.yaml "https://prometheus.$cluster" 'sum by (svc) (
       label_replace(
