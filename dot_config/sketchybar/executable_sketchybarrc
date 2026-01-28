@@ -27,6 +27,7 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/d
 
 # Setting up the general bar appearance and default values
 sketchybar --bar height=35 \
+  display=main \
   color=$BAR_COLOR \
   shadow=off \
   position=top \
