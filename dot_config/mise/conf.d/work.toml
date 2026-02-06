@@ -15,7 +15,6 @@ pandoc = "latest"
 tinytex = "latest"
 argocd = "2.12.7"
 "github:google/mtail" = "latest"
-tilt = "latest"
 "github:grafana/grizzly" = "0.7.1"
 "github:grafana/loki" = { version = "2.9.13", matching = "logcli-darwin-arm", exe="logcli-darwin-arm64", rename_exe="logcli" }
 ruby = "3.4.2"
