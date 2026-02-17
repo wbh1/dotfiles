@@ -9,7 +9,7 @@ cpu_percent=(
 	icon="$CPU"
 	icon.font="$NERD_FONT:Bold:20.0"
 	icon.color="$BLUE"
-	update_freq=2
+	update_freq=60
 	mach_helper="$HELPER"
 )
 
@@ -21,54 +21,54 @@ memory=(label.font="$FONT:Heavy:12"
 	icon="$MEMORY"
 	icon.font="$NERD_FONT:Bold:20.0"
 	icon.color="$GREEN"
-	update_freq=15
+	update_freq=60
 	script="$PLUGIN_DIR/stats/scripts/ram.sh"
 )
 
 sketchybar --add item memory right \
 	--set memory "${memory[@]}"
 
-disk=(
-	label.font="$FONT:Heavy:12"
-	label.color="$LABEL_COLOR"
-	icon="$DISK"
-	icon.color="$MAROON"
-	icon.font="$NERD_FONT:Bold:18.0"
-	update_freq=60
-	script="$PLUGIN_DIR/stats/scripts/disk.sh"
-)
-
-sketchybar --add item disk right \
-	--set disk "${disk[@]}"
-
-network_down=(
-	y_offset=-7
-	label.font="$FONT:Heavy:10"
-	label.color="$LABEL_COLOR"
-	icon="$NETWORK_DOWN"
-	icon.font="$NERD_FONT:Bold:16.0"
-	icon.color="$GREEN"
-	icon.highlight_color="$BLUE"
-	update_freq=1
-)
-
-network_up=(
-	background.padding_right=-70
-	y_offset=7
-	label.font="$FONT:Heavy:10"
-	label.color="$LABEL_COLOR"
-	icon="$NETWORK_UP"
-	icon.font="$NERD_FONT:Bold:16.0"
-	icon.color="$GREEN"
-	icon.highlight_color="$BLUE"
-	update_freq=1
-	script="$PLUGIN_DIR/stats/scripts/network.sh"
-)
-
-sketchybar --add item network.down right \
-	--set network.down "${network_down[@]}" \
-	--add item network.up right \
-	--set network.up "${network_up[@]}"
+# disk=(
+# 	label.font="$FONT:Heavy:12"
+# 	label.color="$LABEL_COLOR"
+# 	icon="$DISK"
+# 	icon.color="$MAROON"
+# 	icon.font="$NERD_FONT:Bold:18.0"
+# 	update_freq=60
+# 	script="$PLUGIN_DIR/stats/scripts/disk.sh"
+# )
+#
+# sketchybar --add item disk right \
+# 	--set disk "${disk[@]}"
+#
+# network_down=(
+# 	y_offset=-7
+# 	label.font="$FONT:Heavy:10"
+# 	label.color="$LABEL_COLOR"
+# 	icon="$NETWORK_DOWN"
+# 	icon.font="$NERD_FONT:Bold:16.0"
+# 	icon.color="$GREEN"
+# 	icon.highlight_color="$BLUE"
+# 	update_freq=1
+# )
+#
+# network_up=(
+# 	background.padding_right=-70
+# 	y_offset=7
+# 	label.font="$FONT:Heavy:10"
+# 	label.color="$LABEL_COLOR"
+# 	icon="$NETWORK_UP"
+# 	icon.font="$NERD_FONT:Bold:16.0"
+# 	icon.color="$GREEN"
+# 	icon.highlight_color="$BLUE"
+# 	update_freq=1
+# 	script="$PLUGIN_DIR/stats/scripts/network.sh"
+# )
+#
+# sketchybar --add item network.down right \
+# 	--set network.down "${network_down[@]}" \
+# 	--add item network.up right \
+# 	--set network.up "${network_up[@]}"
 
 # separator_right=(
 # 	icon=
