@@ -19,7 +19,8 @@ argocd = "2.12.7"
 "github:grafana/loki" = { version = "2.9.13", matching = "logcli-darwin-arm", exe="logcli-darwin-arm64", rename_exe="logcli" }
 ruby = "3.4.2"
 "gem:hss" = "latest"
-"go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
+# Manually install my fork until PR merged: https://github.com/ankitpokhrel/jira-cli/pull/925
+# "go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
 pkl = "0.28.2"
 "github:tjhop/prometheus-mcp-server" = "latest"
 
