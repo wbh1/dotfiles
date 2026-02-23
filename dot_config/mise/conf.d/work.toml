@@ -23,6 +23,7 @@ ruby = "3.4.2"
 # "go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
 pkl = "0.28.2"
 "github:tjhop/prometheus-mcp-server" = "latest"
+shellcheck = "latest"
 
 [settings]
 experimental = true
