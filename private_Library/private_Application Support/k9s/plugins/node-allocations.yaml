@@ -1,0 +1,115 @@
+# ABOUTME: k9s plugin to show allocated resources (requests/limits) for all nodes.
+# ABOUTME: Helps identify overscheduled nodes by comparing limits to capacity.
+plugins:
+  node-allocations:
+    shortCut: Shift-M
+    description: Show node resource allocations
+    scopes:
+      - node
+    command: bash
+    background: false
+    args:
+      - -c
+      - |-
+        set -euo pipefail
+        TMPDIR=$(mktemp -d)
+        trap 'rm -rf "$TMPDIR"' EXIT
+
+        kubectl --context "$CONTEXT" --kubeconfig "$KUBECONFIG" get nodes -o json > "$TMPDIR/nodes.json" &
+        kubectl --context "$CONTEXT" --kubeconfig "$KUBECONFIG" get pods -A \
+          --field-selector 'status.phase!=Failed,status.phase!=Succeeded' \
+          -o json > "$TMPDIR/pods.json" &
+        kubectl --context "$CONTEXT" --kubeconfig "$KUBECONFIG" get --raw /apis/metrics.k8s.io/v1beta1/nodes \
+          > "$TMPDIR/metrics.json" 2>/dev/null || echo '{"items":[]}' > "$TMPDIR/metrics.json" &
+        wait
+
+        jq -rn \
+          --slurpfile nodes "$TMPDIR/nodes.json" \
+          --slurpfile pods "$TMPDIR/pods.json" \
+          --slurpfile metrics "$TMPDIR/metrics.json" '
+          ($nodes[0]) as $nodes | ($pods[0]) as $pods | ($metrics[0]) as $metrics |
+
+          def parse_mem:
+            tostring |
+            if test("Ti$") then (rtrimstr("Ti") | tonumber * 1099511627776)
+            elif test("Gi$") then (rtrimstr("Gi") | tonumber * 1073741824)
+            elif test("Mi$") then (rtrimstr("Mi") | tonumber * 1048576)
+            elif test("Ki$") then (rtrimstr("Ki") | tonumber * 1024)
+            elif test("[0-9]+$") then tonumber
+            else 0 end;
+
+          def parse_cpu:
+            tostring |
+            if test("n$") then (rtrimstr("n") | tonumber / 1000000)
+            elif test("u$") then (rtrimstr("u") | tonumber / 1000)
+            elif test("m$") then (rtrimstr("m") | tonumber)
+            elif test("[0-9]+$") then (tonumber * 1000)
+            else 0 end;
+
+          def fmt_mem:
+            if . >= 1073741824 then "\(. / 1073741824 * 10 | round / 10)Gi"
+            elif . >= 1048576 then "\(. / 1048576 | round)Mi"
+            else "\(. / 1024 | round)Ki"
+            end;
+
+          def fmt_cpu:
+            if . >= 1000 then "\(. / 1000 * 10 | round / 10)"
+            else "\(. | round)m"
+            end;
+
+          def pct($n; $d):
+            if $d == 0 then "N/A"
+            else "\($n * 100 / $d | round)%"
+            end;
+
+          ($pods.items
+            | map(select(.spec.nodeName != null))
+            | group_by(.spec.nodeName)
+            | map({key: .[0].spec.nodeName, value: .})
+            | from_entries
+          ) as $by_node |
+
+          ($metrics.items
+            | map({key: .metadata.name, value: .usage})
+            | from_entries
+          ) as $by_metrics |
+
+          [$nodes.items[] | . as $node |
+            ($by_node[$node.metadata.name] // []) as $np |
+            ($by_metrics[$node.metadata.name] // null) as $usage |
+            {
+              name: $node.metadata.name,
+              cpu_alloc: ($node.status.allocatable.cpu | parse_cpu),
+              mem_alloc: ($node.status.allocatable.memory | parse_mem),
+              cpu_req: ([$np[].spec.containers[].resources.requests.cpu // "0" | parse_cpu] | add // 0),
+              cpu_lim: ([$np[].spec.containers[].resources.limits.cpu // "0" | parse_cpu] | add // 0),
+              mem_req: ([$np[].spec.containers[].resources.requests.memory // "0" | parse_mem] | add // 0),
+              mem_lim: ([$np[].spec.containers[].resources.limits.memory // "0" | parse_mem] | add // 0),
+              cpu_use: (if $usage then ($usage.cpu | parse_cpu) else null end),
+              mem_use: (if $usage then ($usage.memory | parse_mem) else null end),
+              pods: ($np | length)
+            }
+          ] |
+          sort_by(- (.mem_lim / (if .mem_alloc == 0 then 1 else .mem_alloc end))) |
+
+          (["NODE", "PODS", "CPU_REQ", "CPU_LIM", "CPU_USE", "CPU_CAP", "%CPU_R", "%CPU_L", "%CPU_U", "MEM_REQ", "MEM_LIM", "MEM_USE", "MEM_CAP", "%MEM_R", "%MEM_L", "%MEM_U"] | @tsv),
+          (["----", "----", "-------", "-------", "-------", "-------", "------", "------", "------", "-------", "-------", "-------", "-------", "------", "------", "------"] | @tsv),
+          (.[] | [
+            .name,
+            (.pods | tostring),
+            (.cpu_req | fmt_cpu),
+            (.cpu_lim | fmt_cpu),
+            (if .cpu_use then (.cpu_use | fmt_cpu) else "N/A" end),
+            (.cpu_alloc | fmt_cpu),
+            pct(.cpu_req; .cpu_alloc),
+            pct(.cpu_lim; .cpu_alloc),
+            (if .cpu_use then pct(.cpu_use; .cpu_alloc) else "N/A" end),
+            (.mem_req | fmt_mem),
+            (.mem_lim | fmt_mem),
+            (if .mem_use then (.mem_use | fmt_mem) else "N/A" end),
+            (.mem_alloc | fmt_mem),
+            pct(.mem_req; .mem_alloc),
+            pct(.mem_lim; .mem_alloc),
+            (if .mem_use then pct(.mem_use; .mem_alloc) else "N/A" end)
+          ] | @tsv)
+        ' | column -t -s "$(printf '\t')" | less -S
