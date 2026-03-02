@@ -6,6 +6,7 @@
       "*": "ask",
       "jira issue list *": "allow",
       "jira issue view *": "allow",
+      "jira me": "allow",
       "go test *": "allow",
       "go mod *": "allow",
       "go fmt *": "allow",
@@ -18,6 +19,7 @@
       "git log *": "allow",
       "git show *": "allow",
       "git branch *": "allow",
+      "which *": "allow",
       "pwd": "allow"
     },
     "webfetch": "ask"
