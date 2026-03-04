@@ -39,7 +39,7 @@ Natural language interaction with Jira. Supports multiple backends.
 | Intent          | Command                                                |
 | --------------- | ------------------------------------------------------ |
 | View issue      | `jira issue view ISSUE-KEY`                            |
-| List my issues  | `jira issue list -a$(jira me)`                         |
+| List my issues  | `jira issue list -a$(jira me) -R unresolved`           |
 | My in-progress  | `jira issue list -a$(jira me) -s"In Progress"`         |
 | Create issue    | `jira issue create -tType -s"Summary" -b"Description"` |
 | Move/transition | `jira issue move ISSUE-KEY "State"`                    |
