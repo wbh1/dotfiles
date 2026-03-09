@@ -24,6 +24,7 @@ ruby = "3.4.2"
 pkl = "0.28.2"
 "github:tjhop/prometheus-mcp-server" = "latest"
 shellcheck = "latest"
+restish = "latest"
 
 [settings]
 experimental = true
