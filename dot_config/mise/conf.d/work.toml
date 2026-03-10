@@ -25,6 +25,7 @@ pkl = "0.28.2"
 "github:tjhop/prometheus-mcp-server" = "latest"
 shellcheck = "latest"
 restish = "latest"
+fnox = "1.7.0"
 
 [settings]
 experimental = true
