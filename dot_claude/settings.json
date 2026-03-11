@@ -3,6 +3,7 @@
     "allow": [
       "Bash(go *)",
       "Bash(python3 *)",
+      "Bash(uv *)",
       "Bash(mkdir *)",
       "Bash(ls *)",
       "Bash(mise run *)",

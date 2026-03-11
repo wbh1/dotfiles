@@ -49,6 +49,7 @@ Natural language interaction with Jira. Supports multiple backends.
 | Open in browser | `jira open ISSUE-KEY`                                  |
 | Current sprint  | `jira sprint list --state active`                      |
 | Who am I        | `jira me`                                              |
+| Add issue to epic | `jira epic add EPIC-KEY ISSUE-KEY`                   |
 
 ---
 
@@ -141,6 +142,8 @@ Ask yourself:
 - **NEVER bulk-modify without explicit approval** — Each ticket change notifies watchers. 10 edits = 10 notification storms.
 
 - **NEVER create tickets without reading guidelines** - Anytime you create a ticket, you must follow the guidelines and collect required info specified in `references/creating-issues.md`
+
+- **NEVER use `--parent` to link an issue to an epic** — Use `jira epic add EPIC-KEY ISSUE-KEY` instead. `--parent` is for sub-tasks, not epic membership.
 
 ---
 
