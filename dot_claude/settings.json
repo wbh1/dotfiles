@@ -1,14 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(go test:*)",
-      "Bash(go build:*)",
-      "Bash(go mod:*)",
-      "Bash(go fmt:*)",
-      "Bash(go vet:*)",
-      "Bash(go run:*)",
-      "Bash(go list:*)",
-      "Bash(go get:*)",
+      "Bash(go *)",
+      "Bash(python3 *)",
+      "Bash(mkdir *)",
+      "Bash(ls *)",
+      "Bash(mise run *)",
+      "Bash(git worktree *)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
@@ -26,5 +24,9 @@
     "superpowers@superpowers-marketplace": true
   },
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "model": "opus",
+  "sandbox": {
+    "enabled": true
+  }
 }
