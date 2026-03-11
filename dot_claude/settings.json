@@ -17,6 +17,8 @@
       "Bash(make build:*)",
       "Bash(pwd)",
       "Skill(superpowers:*)",
+      "Skill(jira)",
+      "Read(~/.claude/skills/jira/*)",
       "SlashCommand(/superpowers:*)",
       "WebFetch(domain:code.claude.com)"
     ]
