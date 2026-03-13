@@ -23,12 +23,10 @@
       "WebFetch(domain:code.claude.com)"
     ]
   },
+  "model": "opus",
   "enabledPlugins": {
     "superpowers@superpowers-marketplace": true
   },
-  "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
-  "model": "opus",
   "sandbox": {
     "enabled": true,
     "network": {
@@ -36,5 +34,7 @@
         "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
       ]
     }
-  }
+  },
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true
 }
