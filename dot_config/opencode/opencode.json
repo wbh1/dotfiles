@@ -64,7 +64,7 @@
       "tools": {
         "write": false,
         "edit": false,
-        "bash": false,
+        "bash": true,
         "webfetch": false,
         "read": false,
         "glob": false,
@@ -74,6 +74,16 @@
         "jirapy_*": true
       },
       "permission": {
+        "bash": {
+          "*": "deny",
+          "ghe pr view *": "allow",
+          "ghe pr list *": "allow",
+          "ghe pr checks *": "allow",
+          "ghe pr diff *": "allow",
+          "ghe pr status *": "allow",
+          "ghe search prs *": "allow",
+          "ghe api *": "allow"
+        },
         "skill": {
           "jira": "deny"
         }
