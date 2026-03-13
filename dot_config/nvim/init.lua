@@ -520,6 +520,21 @@ require('lazy').setup({
         shfmt = {},
         terraformls = {},
         jsonnet_ls = {},
+        jsonls = {
+          -- lazy-load schemastore when needed
+          before_init = function(_, new_config)
+            new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+            vim.list_extend(new_config.settings.json.schemas, require('schemastore').json.schemas())
+          end,
+          settings = {
+            json = {
+              format = {
+                enable = true,
+              },
+              validate = { enable = true },
+            },
+          },
+        },
         eslint = {
           settings = {
             workingDirectories = { mode = 'auto' },
@@ -631,7 +646,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         go = { 'goimports', 'gofmt' },
-        json = { 'jq' },
+        json = { lsp_format = 'prefer' },
         lua = { 'stylua' },
         markdown = { 'markdownlint-cli2', 'prettier' },
         sh = { 'shfmt' },
@@ -645,6 +660,9 @@ require('lazy').setup({
       },
       formatters = {
         prettier = {
+          -- prettier doesn't have a "global" config so these flags
+          -- serve as one. However, it allows config files in repos
+          -- to take precedence.
           append_args = { '--config-precedence', 'file-override', '--prose-wrap', 'always' },
         },
       },

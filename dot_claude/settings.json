@@ -25,7 +25,8 @@
   },
   "model": "opus",
   "enabledPlugins": {
-    "superpowers@superpowers-marketplace": true
+    "superpowers@superpowers-marketplace": true,
+    "lua-lsp@claude-plugins-official": true
   },
   "sandbox": {
     "enabled": true,

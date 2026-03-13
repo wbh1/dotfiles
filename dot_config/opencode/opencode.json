@@ -4,9 +4,19 @@
     "edit": "allow",
     "bash": {
       "*": "ask",
-      "jira issue list *": "allow",
-      "jira issue view *": "allow",
-      "jira me": "allow",
+      "python3 *": "allow",
+      "uv *": "allow",
+      "mkdir *": "allow",
+      "ls *": "allow",
+      "mise run *": "allow",
+      "make test": "allow",
+      "make build": "allow",
+      "git worktree *": "allow",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "git branch *": "allow",
       "go test *": "allow",
       "go mod *": "allow",
       "go fmt *": "allow",
@@ -14,15 +24,16 @@
       "go run *": "allow",
       "go list *": "allow",
       "go get *": "allow",
-      "git status *": "allow",
-      "git diff *": "allow",
-      "git log *": "allow",
-      "git show *": "allow",
-      "git branch *": "allow",
       "which *": "allow",
-      "pwd": "allow"
+      "pwd": "allow",
+      "wc *": "allow",
+      "grep *": "allow"
     },
-    "webfetch": "ask"
+    "webfetch": "ask",
+    "skill": {
+      "superpowers*": "allow",
+      "jira": "allow"
+    }
   },
   "mcp": {
     "context7": {
