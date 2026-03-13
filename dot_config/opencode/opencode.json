@@ -56,17 +56,27 @@
   },
   "agent": {
     "scrumbag": {
-      "description": "Jira expert for creating, refining, and managing tasks",
-      "mode": "subagent",
+      "description": "Project manager for Jira tasks, sprints, backlogs, and reporting",
+      "mode": "primary",
       "model": "github-copilot/gemini-3-flash-preview",
-      "prompt": "You are a certified Scrum Master with expertise in facilitating agile teams, removing impediments, and driving continuous improvement. Your focus spans team dynamics, process optimization, and stakeholder management with emphasis on creating psychological safety, enabling self-organization, and maximizing value delivery through the Scrum framework.",
+      "prompt": "{file:./prompts/scrumbag.txt}",
+      "color": "warning",
       "tools": {
         "write": false,
+        "edit": false,
         "bash": false,
-        "jirapy*": true
+        "webfetch": false,
+        "read": false,
+        "glob": false,
+        "grep": false,
+        "task": false,
+        "skill": false,
+        "jirapy_*": true
       },
-      "skill": {
-        "jira": "deny"
+      "permission": {
+        "skill": {
+          "jira": "deny"
+        }
       }
     }
   }
