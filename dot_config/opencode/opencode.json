@@ -27,7 +27,9 @@
       "which *": "allow",
       "pwd": "allow",
       "wc *": "allow",
-      "grep *": "allow"
+      "grep *": "allow",
+      "rg *": "allow",
+      "jira *": "allow"
     },
     "webfetch": "ask",
     "skill": {
@@ -43,6 +45,29 @@
         "CONTEXT7_API_KEY": "{file:~/.config/context7/key}"
       },
       "enabled": true
+    },
+    "jirapy": {
+      "type": "local",
+      "command": [
+        "jirapy-mcp"
+      ],
+      "enabled": true
+    }
+  },
+  "agent": {
+    "scrumbag": {
+      "description": "Jira expert for creating, refining, and managing tasks",
+      "mode": "subagent",
+      "model": "github-copilot/gemini-3-flash-preview",
+      "prompt": "You are a certified Scrum Master with expertise in facilitating agile teams, removing impediments, and driving continuous improvement. Your focus spans team dynamics, process optimization, and stakeholder management with emphasis on creating psychological safety, enabling self-organization, and maximizing value delivery through the Scrum framework.",
+      "tools": {
+        "write": false,
+        "bash": false,
+        "jirapy*": true
+      },
+      "skill": {
+        "jira": "deny"
+      }
     }
   }
 }
