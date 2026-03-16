@@ -53,41 +53,5 @@
       ],
       "enabled": true
     }
-  },
-  "agent": {
-    "scrumbag": {
-      "description": "Project manager for Jira tasks, sprints, backlogs, and reporting",
-      "mode": "primary",
-      "model": "github-copilot/gemini-3-flash-preview",
-      "prompt": "{file:./prompts/scrumbag.txt}",
-      "color": "warning",
-      "tools": {
-        "write": false,
-        "edit": false,
-        "bash": true,
-        "webfetch": false,
-        "read": false,
-        "glob": false,
-        "grep": false,
-        "task": false,
-        "skill": false,
-        "jirapy_*": true
-      },
-      "permission": {
-        "bash": {
-          "*": "deny",
-          "ghe pr view *": "allow",
-          "ghe pr list *": "allow",
-          "ghe pr checks *": "allow",
-          "ghe pr diff *": "allow",
-          "ghe pr status *": "allow",
-          "ghe search prs *": "allow",
-          "ghe api *": "allow"
-        },
-        "skill": {
-          "jira": "deny"
-        }
-      }
-    }
   }
 }
