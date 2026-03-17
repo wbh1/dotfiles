@@ -28,7 +28,7 @@ return { -- Collection of various small independent plugins/modules
     }
 
     -- Session management
-    require('mini.sessions').setup { autoread = false }
+    require('mini.sessions').setup { autoread = true }
 
     -- Make buffers behave more like tabs in VSCode
     require('mini.bufremove').setup()
