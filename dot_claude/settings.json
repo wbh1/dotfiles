@@ -23,7 +23,10 @@
       "WebFetch(domain:code.claude.com)"
     ]
   },
-  "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
   "enabledPlugins": {
     "superpowers@superpowers-marketplace": true,
     "lua-lsp@claude-plugins-official": true
@@ -37,9 +40,5 @@
     }
   },
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
-  "statusLine": {
-    "type": "command",
-    "command": "bash ~/.claude/statusline-command.sh"
-  }
+  "skipDangerousModePermissionPrompt": true
 }
