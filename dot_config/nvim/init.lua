@@ -501,14 +501,13 @@ require('lazy').setup({
         -- GO
         gopls = {},
         -- PYTHON
-        pyright = {},
+        pyright = { autostart = false },
         ruff = {},
         ty = {},
-        -- jedi_language_server = {},
         yamlls = {
           autostart = true,
           -- disable YAML diagnostics on Saltstack files
-          on_attach = function(client, bufnr)
+          on_attach = function(_, bufnr)
             local filename = vim.api.nvim_buf_get_name(bufnr)
             if filename:match '%.sls$' then
               vim.diagnostic.enable(false, { bufnr = bufnr })
@@ -579,7 +578,11 @@ require('lazy').setup({
       ---@type MasonLspconfigSettings
       ---@diagnostic disable-next-line: missing-fields
       require('mason-lspconfig').setup {
-        automatic_enable = vim.tbl_keys(servers or {}),
+        -- automatically enable servers installed by Mason
+        -- UNLESS they have autostart = false
+        automatic_enable = vim.tbl_filter(function(k)
+          return (servers[k] or {}).autostart ~= false
+        end, vim.tbl_keys(servers or {})),
       }
 
       -- Ensure the servers and tools above are installed
@@ -597,7 +600,6 @@ require('lazy').setup({
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-      -- Installed LSPs are configured and enabled automatically with mason-lspconfig
       -- The loop below is for overriding the default configuration of LSPs with the ones in the servers table
       for server_name, config in pairs(servers) do
         vim.lsp.config(server_name, config)
@@ -715,16 +717,19 @@ require('lazy').setup({
         -- Sets the fallback highlight groups to nvim-cmp's highlight groups
         -- Useful for when your theme doesn't support blink.cmp
         -- will be removed in a future release
-        use_nvim_cmp_as_default = true,
+        use_nvim_cmp_as_default = false,
         nerd_font_variant = 'mono',
       },
 
       sources = {
+        -- -- adding any nvim-cmp sources here will enable them
+        -- -- with blink.compat
+        -- compat = {},
         default = { 'lsp', 'path', 'snippets', 'buffer' },
         providers = {
           -- dont show LuaLS require statements when lazydev has items
-          -- lsp = { fallback_for = { 'lazydev' } },
-          lazydev = { name = 'LazyDev', module = 'lazydev.integrations.blink' },
+          lsp = { fallbacks = { 'lazydev' } },
+          lazydev = { name = 'LazyDev', module = 'lazydev.integrations.blink', score_offset = 100 },
         },
       },
 
