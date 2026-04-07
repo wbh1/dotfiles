@@ -316,8 +316,7 @@ require('lazy').setup({
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
-    -- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-    event = 'VeryLazy',
+    event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'williamboman/mason.nvim', opts = {} },
@@ -506,6 +505,15 @@ require('lazy').setup({
         ty = {},
         yamlls = {
           autostart = true,
+          settings = {
+            yaml = {
+              schemaStore = {
+                enable = false,
+                url = '',
+              },
+              schemas = require('schemastore').yaml.schemas(),
+            },
+          },
           -- disable YAML diagnostics on Saltstack files
           on_attach = function(_, bufnr)
             local filename = vim.api.nvim_buf_get_name(bufnr)
@@ -521,15 +529,16 @@ require('lazy').setup({
         jsonnet_ls = {},
         jsonls = {
           -- lazy-load schemastore when needed
-          before_init = function(_, new_config)
-            new_config.settings.json.schemas = new_config.settings.json.schemas or {}
-            vim.list_extend(new_config.settings.json.schemas, require('schemastore').json.schemas())
-          end,
+          -- before_init = function(_, new_config)
+          --   new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+          --   vim.list_extend(new_config.settings.json.schemas, require('schemastore').json.schemas())
+          -- end,
           settings = {
             json = {
               format = {
                 enable = true,
               },
+              schemas = require('schemastore').json.schemas(),
               validate = { enable = true },
             },
           },
@@ -605,12 +614,20 @@ require('lazy').setup({
         vim.lsp.config(server_name, config)
       end
 
-      -- NOTE: Some servers may require an old setup until they are updated. For the full list refer here: https://github.com/neovim/nvim-lspconfig/issues/3705
-      -- These servers will have to be manually set up with require("lspconfig").server_name.setup{}
-
       require('neoconf').setup {
         -- override any of the default settings here
       }
+
+      -- NOTE: Some servers may require an old setup until they are updated. For the full list refer here: https://github.com/neovim/nvim-lspconfig/issues/3705
+      -- These servers will have to be manually set up with require("lspconfig").server_name.setup{}
+      -- require('lspconfig').jsonls.setup {
+      --   settings = {
+      --     json = {
+      --       schemas = require('schemastore').json.schemas(),
+      --       validate = { enable = true },
+      --     },
+      --   },
+      -- }
     end,
   },
 
