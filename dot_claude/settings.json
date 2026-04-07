@@ -36,10 +36,18 @@
     "network": {
       "allowUnixSockets": [
         "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+      ],
+      "allowedDomains": [
+        "track-api.akamai.com"
       ]
-    }
+    },
+    "filesystem": {
+      "allowWrite": [
+        "/tmp/claude-501",
+        "/tmp/claude"
+      ]
+    },
   },
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
-  "model": "opus"
+  "skipDangerousModePermissionPrompt": true
 }
