@@ -46,7 +46,7 @@
         "/tmp/claude-501",
         "/tmp/claude"
       ]
-    },
+    }
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true
