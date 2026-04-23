@@ -1166,10 +1166,10 @@ detect_files = []
 detect_folders = []
 
 [custom.chezmoi]
-command = "echo \" $(chezmoi status | wc -l | awk '{print$1}') unsaved dotfile changes!\""
+command = "echo \" $(chezmoi status -x templates | wc -l | awk '{print$1}') unsaved dotfile changes!\""
 symbol = ''
 # the module will be shown if the shell returns a 0 status code from executing it.
-when = "! chezmoi verify"
+when = "! chezmoi verify -x templates"
 description = "Shows if Chezmoi has uncommitted or unapplied changes"
 style = 'italic #D08770'
 
