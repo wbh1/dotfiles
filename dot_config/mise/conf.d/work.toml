@@ -4,7 +4,7 @@ pint = "0.61.2"
 yarn = "1"
 pnpm = "latest"
 vale = "latest"
-"go:github.com/prometheus/alertmanager/cmd/amtool" = "latest"
+"github:prometheus/alertmanager" = { version = "latest", filter_bins = "amtool" }
 promtool = "3.5.0"
 git-cliff = "2.5.0"
 sloth = "0.13.1"

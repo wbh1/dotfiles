@@ -4,9 +4,10 @@
 alias pcsetup="ansible-playbook $HOME/github/wbh1/setup_pc/playbook.yml"
 
 # Installed via mise
-# if (( $+commands[bat] )); then
-#   alias cat="bat"
-# fi
+if (( $+commands[bat] )); then
+  # alias cat="bat"
+  alias bate="bat --pager='less -FR +G'"
+fi
 
 if (( $+commands[nvim] )); then
   alias vim="nvim"

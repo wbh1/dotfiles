@@ -46,8 +46,18 @@
         "/tmp/claude-501",
         "/tmp/claude"
       ]
-    },
+    }
   },
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "advisorModel": "opus"{{ if eq .chezmoi.group "staff" }},
+  "env": {
+    "CLAUDE_CODE_USE_FOUNDRY": "1",
+    "ANTHROPIC_FOUNDRY_API_KEY": "{{ onepasswordRead "op://Employee/Akamai Claude Code Pilot/credential" }}",
+    "ANTHROPIC_FOUNDRY_BASE_URL": "{{ onepasswordRead "op://Employee/Akamai Claude Code Pilot/hostname" }}",
+    "ANTHROPIC_CUSTOM_HEADERS": "user-id: {{ onepasswordRead "op://Employee/Akamai Claude Code Pilot/username" }}",
+    "ANTHROPIC_LOG": "debug",
+    "NODE_EXTRA_CA_CERTS": "/Users/whegedus/.claude-certs/full_chain.pem",
+    "CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING": "1"
+  }{{ end }}
 }
