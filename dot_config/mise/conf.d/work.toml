@@ -1,4 +1,5 @@
 [tools]
+neovim = "0.11.4"
 teleport-community = "14.0.3"
 pint = "0.61.2"
 yarn = "1"
