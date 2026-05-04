@@ -27,6 +27,7 @@ pkl = "0.28.2"
 shellcheck = "latest"
 restish = "latest"
 fnox = "1.7.0"
+python = "3.14"
 
 [settings]
 experimental = true
