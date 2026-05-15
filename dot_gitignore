@@ -8,5 +8,8 @@ Session.vim
 mise.local.toml
 .mise.local.toml
 
+# fnox
+fnox.local.toml
+
 # Git
 .worktrees/
