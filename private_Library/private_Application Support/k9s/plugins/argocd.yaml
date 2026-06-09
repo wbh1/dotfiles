@@ -39,7 +39,9 @@ plugins:
       - "kubectl annotate applications -n argocd $NAME argocd.argoproj.io/refresh=hard"
 
   disable-auto-sync:
-    shortCut: Shift-S
+  # TODO: Find a shortcut that doesn't conflict with a built-in one
+    # shortCut: Shift-J
+    shortCut: Shift-V
     confirm: true
     scopes:
       - apps
@@ -55,20 +57,19 @@ plugins:
       - "--type=json"
       - '-p=[{"op":"replace", "path": "/spec/syncPolicy", "value": {}}]'
 
-  # enable-auto-sync:
-  # # TODO: Find a shortcut that doesn't conflict with a built-in one
-  #   shortCut: Shift-S
-  #   confirm: true
-  #   scopes:
-  #     - apps
-  #   description: Enable argocd sync
-  #   command: kubectl
-  #   background: false
-  #   args:
-  #     - patch
-  #     - applications
-  #     - -n
-  #     - argocd
-  #     - $NAME
-  #     - --type=merge
-  #     - '-p={"spec":{"syncPolicy":{"automated":{"prune":true,"selfHeal":true},"syncOptions":["ApplyOutOfSyncOnly=true","CreateNamespace=true","PruneLast=true","PrunePropagationPolicy=foreground"]}}}'
+  enable-auto-sync:
+    shortCut: Shift-B
+    confirm: true
+    scopes:
+      - apps
+    description: Enable argocd sync
+    command: kubectl
+    background: false
+    args:
+      - patch
+      - applications
+      - -n
+      - argocd
+      - $NAME
+      - --type=merge
+      - '-p={"spec":{"syncPolicy":{"automated":{"prune":true,"selfHeal":true},"syncOptions":["ApplyOutOfSyncOnly=true","CreateNamespace=true","PruneLast=true","PrunePropagationPolicy=foreground"]}}}'
