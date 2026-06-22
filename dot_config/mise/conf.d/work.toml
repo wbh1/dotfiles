@@ -14,7 +14,7 @@ infracost = "0.10.39"
 pandoc = "latest"
 # Needed for pandoc PDF export
 tinytex = "latest"
-argocd = "2.12.7"
+argocd = "2.14.21"
 "github:google/mtail" = "latest"
 "github:grafana/grizzly" = "0.7.1"
 "github:grafana/loki" = { version = "2.9.13", matching = "logcli-darwin-arm", exe="logcli-darwin-arm64", rename_exe="logcli" }
