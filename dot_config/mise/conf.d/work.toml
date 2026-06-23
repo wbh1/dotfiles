@@ -1,16 +1,16 @@
 [tools]
 neovim = "0.11.4"
 teleport-community = "14.0.3"
-pint = "0.61.2"
+pint = "latest"
 yarn = "1"
 pnpm = "latest"
 vale = "latest"
 "github:prometheus/alertmanager" = { version = "latest", filter_bins = "amtool" }
-promtool = "3.5.0"
+promtool = "3.12.0"
 git-cliff = "2.5.0"
 sloth = "0.13.1"
 "go:github.com/neilotoole/sq" = "0.48.3"
-infracost = "0.10.39"
+# infracost = "0.10.39"
 pandoc = "latest"
 # Needed for pandoc PDF export
 tinytex = "latest"
@@ -22,19 +22,15 @@ ruby = "3.4.2"
 "gem:hss" = "latest"
 # Manually install my fork until PR merged: https://github.com/ankitpokhrel/jira-cli/pull/925
 # "go:github.com/ankitpokhrel/jira-cli/cmd/jira" = "latest"
-pkl = "0.28.2"
+# pkl = "0.28.2"
 "github:tjhop/prometheus-mcp-server" = "latest"
 shellcheck = "latest"
 restish = "latest"
-fnox = "1.7.0"
+fnox = "latest"
 python = "3.14"
 
 [settings]
 experimental = true
-
-[tool_alias]
-sloth = "asdf:linode-obs/asdf-sloth"
-
 
 [tasks.gen-key]
 description = "Generate a new SSH key"
