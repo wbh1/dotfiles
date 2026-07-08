@@ -10,7 +10,7 @@ os:
   editPreset: 'nvim-remote'
 
 customCommands:
-  - key: '<c-P>'
+  - key: '<ctrl+p>'
     description: "Push to a specific remote repository"
     context: 'global'
     loadingText: 'Pushing ...'
