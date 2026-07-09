@@ -316,7 +316,6 @@ require('lazy').setup({
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
-    event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
     dependencies = {
       'b0o/schemastore.nvim',
       -- Automatically install LSPs and related tools to stdpath for Neovim
@@ -585,16 +584,6 @@ require('lazy').setup({
         },
       }
 
-      ---@type MasonLspconfigSettings
-      ---@diagnostic disable-next-line: missing-fields
-      require('mason-lspconfig').setup {
-        -- automatically enable servers installed by Mason
-        -- UNLESS they have autostart = false
-        automatic_enable = vim.tbl_filter(function(k)
-          return (servers[k] or {}).autostart ~= false
-        end, vim.tbl_keys(servers or {})),
-      }
-
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
@@ -613,6 +602,9 @@ require('lazy').setup({
       -- The loop below is for overriding the default configuration of LSPs with the ones in the servers table
       for server_name, config in pairs(servers) do
         vim.lsp.config(server_name, config)
+        if config.autostart ~= false then
+          vim.lsp.enable(server_name)
+        end
       end
 
       require('neoconf').setup {
