@@ -4,6 +4,9 @@ Session.vim
 # Claude Code
 .claude/
 
+# Pi
+.pi-subagents/artifacts/
+
 # Mise
 mise.local.toml
 .mise.local.toml

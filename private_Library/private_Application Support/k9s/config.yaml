@@ -20,7 +20,7 @@ k9s:
     image: busybox:1.35.0
     namespace: default
     limits:
-      cpu: 100m
+      cpu: "8000m"
       memory: 100Mi
   imageScans:
     enable: false
