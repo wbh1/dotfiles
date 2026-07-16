@@ -6,6 +6,7 @@
     "ANTHROPIC_FOUNDRY_BASE_URL": "{{ onepasswordRead "op://Employee/Akamai Claude Code Pilot/hostname" }}",
     "ANTHROPIC_CUSTOM_HEADERS": "user-id: {{ onepasswordRead "op://Employee/Akamai Claude Code Pilot/username" }}",
     "ANTHROPIC_LOG": "debug",
+    "CLAUDE_CODE_ENABLE_AUTO_MODE": "1",
     "NODE_EXTRA_CA_CERTS": "/Users/whegedus/.claude-certs/full_chain.pem",
     "CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING": "1"
   },{{ end }}
@@ -37,16 +38,31 @@
       "mcp__readwise__authenticate",
       "mcp__readwise__complete_authentication",
       "mcp__acp__Read",
-      "mcp__context7__*"
+          "mcp__o11y__grafana_list_datasources",
+      "mcp__o11y__grafana_query_prometheus",
+      "mcp__o11y__grafana_list_prometheus_label_values",
+      "Bash(docker compose logs *)",
+      "Bash(linode-cli linodes list *)",
+      "Bash(jira issue list *)"
     ]
   },
+  "model": "haiku",
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "superpowers@superpowers-marketplace": true,
-    "lua-lsp@claude-plugins-official": true
+    "lua-lsp@claude-plugins-official": true,
+    "warp@claude-code-warp": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    }
   },
   "sandbox": {
     "enabled": true,
@@ -54,16 +70,23 @@
       "allowedDomains": [
         "api.raindrop.io",
         "mcp2.readwise.io",
-        "track-api.akamai.com"
+        "track-api.akamai.com",
+        "github.com",
+        "api.github.com",
+        "objects.githubusercontent.com"
       ],
       "allowUnixSockets": [
-        "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+        "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock",
+        "/Users/whegedus/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
       ]
     },
     "filesystem": {
       "allowWrite": [
         "/tmp/claude-501",
-        "/tmp/claude"
+        "/tmp/claude",
+        "~/.cache/pre-commit",
+        "/Users/whegedus/bits/ops/terraform-observability-team/.vale/",
+        "/Users/whegedus/Library/Keychains/"
       ]
     }
   },
@@ -71,6 +94,5 @@
   "effortLevel": "high",
   "advisorModel": "opus",
   "skipDangerousModePermissionPrompt": true,
-  "theme": "dark-daltonized",
-  "model": "claude-sonnet-4-6"
+  "theme": "dark-daltonized"
 }
