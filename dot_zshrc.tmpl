@@ -201,7 +201,7 @@ kcfg () {
   export KUBECONFIG="$selected"
   echo "KUBECONFIG set to: $selected"
 
-  if grep -q '^proxy-url: socks5://localhost:1080' "$selected"
+  if grep -q 'proxy-url: socks5://localhost:1080' "$selected"
   then
     if nc -z localhost 1080 2>/dev/null
     then
