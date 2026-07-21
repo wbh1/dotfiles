@@ -189,17 +189,29 @@ vicmec-disk(){
 }
 {{- end }}
 
-kcfg() {
+kcfg () {
+  local KCFG_JUMPBOX="jumpbox-iad3.linode.com"
   local selected
   selected=$(find ~/.kube/*-configs/ -maxdepth 1 -type f 2>/dev/null | fzf --prompt="kubeconfig> " --height=40% --reverse --with-nth=-1 -d/)
-
-  if [[ -z "$selected" ]]; then
+  if [[ -z "$selected" ]]
+  then
     echo "No kubeconfig selected."
     return 1
   fi
-
   export KUBECONFIG="$selected"
   echo "KUBECONFIG set to: $selected"
+
+  if grep -q '^proxy-url: socks5://localhost:1080' "$selected"
+  then
+    if nc -z localhost 1080 2>/dev/null
+    then
+            : # proxy already running, nothing to do
+    else
+            echo "This kubeconfig requires a SOCKS proxy on localhost:1080 and none is running."
+            echo "Starting proxy: ssh -D 1080 -q -CNf \$USER@\$KCFG_JUMPBOX"
+            ssh -D 1080 -q -CNf "$USER@$KCFG_JUMPBOX"
+    fi
+  fi
 }
 
 export K9S_FEATURE_GATE_NODE_SHELL=true
