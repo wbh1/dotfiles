@@ -63,6 +63,7 @@ java = "openjdk-21"
 "aqua:github/copilot-cli" = "latest"
 yq = "4.52.4"
 pi = "latest"
+herdr = "latest"
 
 [settings]
 experimental = true
