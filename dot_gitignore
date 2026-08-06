@@ -1,6 +1,8 @@
 # Neovim sessions
 Session.vim
 
+.DS_STORE
+
 # Claude Code
 .claude/
 
