@@ -1,0 +1,52 @@
+{
+  "enabled": true,
+  "network": {
+    "allowedDomains": [
+      "npmjs.org",
+      "*.npmjs.org",
+      "registry.npmjs.org",
+      "registry.yarnpkg.com",
+      "pypi.org",
+      "*.pypi.org",
+      "files.pythonhosted.org",
+      "github.com",
+      "*.github.com",
+      "api.github.com",
+      "raw.githubusercontent.com",
+      "api.raindrop.io",
+      "mcp2.readwise.io",
+      "objects.githubusercontent.com",
+      "mise-versions.jdx.dev",
+      "track-api.akamai.com",
+      "bits.linode.com"
+    ],
+    "deniedDomains": [],
+    "allowUnixSockets": [
+      "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock",
+      "/Users/whegedus/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    ]
+  },
+  "filesystem": {
+    "denyRead": [
+      "~/.aws",
+      "~/.gnupg"
+    ],
+    "allowWrite": [
+      ".",
+      "/tmp",
+      "/private/tmp",
+      "~/.cache/pre-commit",
+      "/Users/whegedus/Library/Caches/",
+      "/Users/whegedus/bits/ops/terraform-observability-team/.vale/",
+      "/Users/whegedus/Library/Keychains/",
+      "/Users/whegedus/.config/chezmoi/chezmoistate.boltdb"
+    ],
+    "denyWrite": [
+      ".env",
+      ".env.*",
+      "*.pem",
+      "*.key"
+    ]
+  },
+  "enableWeakerNetworkIsolation": true
+}

@@ -1,0 +1,13 @@
+{
+  "models": {
+    "gpt-5.3-codex": [
+      {
+        "tier": "Default",
+        "input": 175,
+        "cachedInput": 17.5,
+        "cacheWrite": 0,
+        "output": 1400
+      }
+    ]
+  }
+}

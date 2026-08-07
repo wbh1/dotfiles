@@ -1,0 +1,10 @@
+{
+  "name": "pi-extensions",
+  "private": true,
+  "dependencies": {
+    "@narumitw/pi-usage": "^0.50.0",
+    "pi-autoresearch": "^1.6.2",
+    "pi-mcp-adapter": "^2.21.0",
+    "pi-subagents": "^0.42.1"
+  }
+}

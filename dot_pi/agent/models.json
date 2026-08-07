@@ -1,0 +1,11 @@
+{
+  "providers": {
+    "linode-inference": {
+      "modelOverrides": {
+        "moonshotai/kimi-k2.6-nvfp4": {
+          "name": "Kimi K2.6 - Implementation"
+        }
+      }
+    }
+  }
+}

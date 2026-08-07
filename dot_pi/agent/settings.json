@@ -1,0 +1,58 @@
+{
+  "lastChangelogVersion": "0.82.1",
+  "theme": "nordfox",
+  "defaultProvider": "github-copilot",
+  "defaultModel": "gpt-5.6-luna",
+  "packages": [
+    "npm:pi-mcp-adapter",
+    "npm:pi-subagents",
+    "git:github.com/obra/superpowers",
+    "../../github/JuanCrg90/pi-extensions/packages/nightfox-themes",
+    "npm:pi-autoresearch",
+    "npm:@narumitw/pi-usage"
+  ],
+  "defaultThinkingLevel": "medium",
+  "hideThinkingBlock": false,
+  "enabledModels": [
+    "github-copilot/*",
+    "linode-inference/moonshotai/kimi*",
+    "linode-inference/google/gemma*"
+  ],
+  "subagents": {
+    "defaultModel": "moonshotai/kimi-k2.6-nvfp4",
+    "modelScope": {
+      "enforce": true,
+      "allow": [
+        "linode-inference/moonshotai/kimi-k2.6-nvfp4",
+        "anthropic/claude-haiku-4-5",
+        "anthropic/claude-opus-4-8",
+        "github-copilot/claude-*",
+        "github-copilot/gpt-5.3-codex",
+        "github-copilot/gpt-5.6-*"
+      ]
+    },
+    "agentOverrides": {
+      "scout": {
+        "model": "gpt-5.6-luna"
+      },
+      "researcher": {},
+      "planner": {
+        "model": "gpt-5.6-terra"
+      },
+      "worker": {
+        "fallbackModels": [
+          "gpt-5.3-codex",
+          "gpt-5.6-luna"
+        ]
+      },
+      "reviewer": {
+        "model": "claude-sonnet-5"
+      },
+      "context-builder": {},
+      "oracle": {
+        "model": "claude-opus-4.8"
+      },
+      "delegate": {}
+    }
+  }
+}
