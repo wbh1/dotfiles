@@ -6,6 +6,7 @@ AGENTS.md
 .pi/agent/mcp-npx-cache.json
 .pi/agent/mcp-cache.json
 .pi/agent/sessions/
+.pi/agent/docs/
 .pi/agent/missions/
 .pi/agent/.pi-subagents/
 .pi/agent/run-history.jsonl
