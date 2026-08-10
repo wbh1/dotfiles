@@ -41,7 +41,7 @@ if [ "$(uname)" = "Darwin" ]; then
   alias kickeaa='sudo pkill -9 -i "aztwatchdog|aztservice|AZTClient" && dscacheutil -flushcache'
 fi
 
-{{- if eq .chezmoi.group "staff" }}
+{{- if eq .envType "work" }}
 # alias vaultlogin="vault login -method ldap username=${USER}"
 vault-login() {
   ADDR=https://{{ .vault_url }}

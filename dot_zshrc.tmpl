@@ -158,7 +158,7 @@ if (( ${+WSL_DISTRO_NAME} )); then
   fi
 fi
 
-{{- if eq .chezmoi.group "staff" }}
+{{- if eq .envType "work" }}
 export TZ_LIST="UTC;US/Mountain;US/Pacific,West Coast;Poland;Asia/Calcutta,India"
 export VAULT_ADDR="https://{{ .vault_url }}"
 

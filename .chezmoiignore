@@ -29,6 +29,6 @@ Library/
 .config/espanso/
 .config/hypr/
 {{ end }}
-{{- if ne .chezmoi.group "staff" }}
+{{- if ne .envType "work" }}
 .config/mise/conf.d/work.toml
 {{- end -}}

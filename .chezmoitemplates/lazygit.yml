@@ -32,7 +32,7 @@ customCommands:
 gui:
   nerdFontsVersion: '3'
 
-{{- if eq .chezmoi.group "staff" }}
+{{- if eq .envType "work" }}
 services:
   '{{ .ghe_url }}': 'github:{{ .ghe_url }}'
 {{- end }}

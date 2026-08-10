@@ -14,7 +14,11 @@
     exclude = ["externals"]
 [data]
     email = {{ promptStringOnce . "email" "Email to use in things like Git" | quote }}
-    {{- if eq .chezmoi.group "staff" }}
+    {{- $envTypes := list "work" "personal" }}
+    {{- $envType := promptChoiceOnce . "envType" "What are you using this computer for?" $envTypes }}
+    envType = {{ $envType | quote }}
+
+    {{- if eq $envType "work" }}
     {{- $infraURL := promptStringOnce . "infra_url" "Base URL to use as a suffix for various internal infra" }}
     infra_url = {{ $infraURL | quote }}
     vault_url = {{ printf "vault.%s:8200" $infraURL | quote }}
