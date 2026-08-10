@@ -167,8 +167,9 @@ needed to complete the task properly. Only pause to ask for confirmation when:
 
 ## Issue tracking
 
-- You MUST use your TodoWrite tool to keep track of what you're doing
-- You MUST NEVER discard tasks from your TodoWrite todo list without Will's
+- You MUST use your TaskCreate, TaskGet, TaskList, and TaskUpdate tools to keep
+  track of what you're doing
+- You MUST NEVER discard tasks from your TaskList todo list without Will's
   explicit approval
 
 ## Systematic Debugging Process
