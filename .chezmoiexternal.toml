@@ -40,3 +40,10 @@
     exclude = ["**/.*", "**/*.md", "**/license", "**/*.js*"]
     stripComponents = 1
     refreshPeriod = "168h"
+
+["github/JuanCrg90/pi-extensions"]
+    type = "archive"
+    url = "https://github.com/JuanCrg90/pi-extensions/archive/main.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
