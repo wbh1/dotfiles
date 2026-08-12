@@ -8,7 +8,6 @@ vale = "latest"
 "github:prometheus/alertmanager" = { version = "latest", filter_bins = "amtool" }
 promtool = "3.12.0"
 git-cliff = "2.5.0"
-sloth = "0.13.1"
 "go:github.com/neilotoole/sq" = "0.48.3"
 # infracost = "0.10.39"
 pandoc = "latest"
@@ -17,7 +16,7 @@ tinytex = "latest"
 argocd = "2.14.21"
 "github:google/mtail" = "latest"
 "github:grafana/grizzly" = "0.7.1"
-"github:grafana/loki" = { version = "2.9.13", matching = "logcli-darwin-arm", exe="logcli-darwin-arm64", rename_exe="logcli" }
+"github:grafana/loki" = { version = "2.9.13", matching_regex = "^logcli-(darwin|linux)-", rename_exe = { "logcli-*" = "logcli" } }
 ruby = "3.4.2"
 "gem:hss" = "latest"
 # Manually install my fork until PR merged: https://github.com/ankitpokhrel/jira-cli/pull/925
