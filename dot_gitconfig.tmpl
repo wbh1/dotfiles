@@ -9,6 +9,7 @@
     diffFilter = delta --color-only
 [include]
     path = ~/.config/delta/themes.gitconfig
+    path = ~/.config/git/cred-helpers
 [delta]
     navigate = true  # use n and N to move between diff sections
     dark = true      # or light = true, or omit for auto-detection
@@ -31,9 +32,6 @@
     count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; net += $1 - $2; loc += $1 + $2 } END { printf \"added lines: %s, removed lines: %s, net lines: %s, total lines: %s\\n\", add, subs, net, loc }' #"
 
 {{- if eq .envType "work" }}
-[url "ssh://git@{{ .ghe_url }}/"]
- 	insteadOf = https://{{ .ghe_url }}/
-
 [url "ssh://git@salt-kvdata/ops/salt-kvdata.git"]
   insteadOf = ssh://git@{{ .ghe_url }}/ops/salt-kvdata.git
 
