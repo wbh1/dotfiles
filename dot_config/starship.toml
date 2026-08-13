@@ -527,7 +527,7 @@ disabled = true
 
 [hostname]
 ssh_only = true
-ssh_symbol = "🌐 "
+ssh_symbol = "󰢹 "
 trim_at = "."
 detect_env_vars = []
 format = "[$ssh_symbol$hostname]($style) in "
@@ -1117,8 +1117,8 @@ detect_folders = []
 
 [username]
 detect_env_vars = []
-format = "[$user]($style) in "
-style_root = "red bold"
+format = "[$user]($style) on "
+style_root = "red bold inverted"
 style_user = "yellow bold"
 show_always = false
 disabled = false
