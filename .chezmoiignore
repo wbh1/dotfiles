@@ -24,6 +24,7 @@ AGENTS.md
 .oh-my-zsh/custom/plugins/kpp
 {{ if ne .chezmoi.os "darwin" }}
 Library/
+.Brewfile
 {{ else }}
 .config/lazygit/
 .config/espanso/
