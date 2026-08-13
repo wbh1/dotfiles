@@ -6,7 +6,17 @@
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-subagents",
-    "../../github/JuanCrg90/pi-extensions/packages/nightfox-themes",
+    {
+      "source": "../../github/JuanCrg90/pi-extensions/packages/nightfox-themes",
+      "themes": [
+        "-themes/carbonfox.json",
+        "-themes/dawnfox.json",
+        "-themes/dayfox.json",
+        "-themes/duskfox.json",
+        "-themes/nightfox.json",
+        "-themes/terafox.json"
+      ]
+    },
     "npm:pi-autoresearch",
     "npm:@narumitw/pi-usage"
   ],
