@@ -18,7 +18,19 @@
       ]
     },
     "npm:pi-autoresearch",
-    "npm:@narumitw/pi-usage"
+    "npm:@narumitw/pi-usage",
+    {
+      "source": "git:github.com/obra/superpowers",
+      "extensions": [
+        "+.pi/extensions/superpowers.ts"
+      ],
+      "skills": [
+        "-skills/writing-plans/SKILL.md",
+        "-skills/brainstorming/SKILL.md",
+        "-skills/writing-skills/SKILL.md"
+      ]
+    },
+    "npm:@tintinweb/pi-tasks"
   ],
   "defaultThinkingLevel": "medium",
   "hideThinkingBlock": false,

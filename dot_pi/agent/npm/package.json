@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@narumitw/pi-usage": "^0.51.0",
+    "@tintinweb/pi-tasks": "^0.7.2",
     "pi-autoresearch": "^1.6.2",
     "pi-mcp-adapter": "^2.24.0",
     "pi-subagents": "^0.48.0"
