@@ -58,7 +58,6 @@ plugins=(
   gh
   helm
   kubectl
-  kpp
   argocd
   terraform
   uv
@@ -66,6 +65,9 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+{{- if eq .envType "work" }}
+plugins+=(kpp)
+{{- end }}
 # https://github.com/ohmyzsh/ohmyzsh/discussions/13354#discussioncomment-14911397
 DISABLE_LS_COLORS=true
 source $ZSH/oh-my-zsh.sh
