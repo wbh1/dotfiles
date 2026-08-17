@@ -30,7 +30,8 @@
         "-skills/writing-skills/SKILL.md"
       ]
     },
-    "npm:@tintinweb/pi-tasks"
+    "npm:@tintinweb/pi-tasks",
+    "npm:@juicesharp/rpiv-ask-user-question"
   ],
   "defaultThinkingLevel": "medium",
   "hideThinkingBlock": false,
