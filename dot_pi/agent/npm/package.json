@@ -3,10 +3,10 @@
   "private": true,
   "dependencies": {
     "@juicesharp/rpiv-ask-user-question": "^2.6.1",
-    "@narumitw/pi-usage": "^0.51.0",
-    "@tintinweb/pi-tasks": "^0.7.3",
+    "@narumitw/pi-usage": "^0.52.0",
+    "@tintinweb/pi-tasks": "^0.8.0",
     "pi-autoresearch": "^1.6.2",
-    "pi-mcp-adapter": "^2.24.0",
-    "pi-subagents": "^0.48.0"
+    "pi-mcp-adapter": "^2.26.0",
+    "pi-subagents": "^0.50.0"
   }
 }
