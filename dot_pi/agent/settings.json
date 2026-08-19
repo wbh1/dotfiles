@@ -31,7 +31,8 @@
       ]
     },
     "npm:@tintinweb/pi-tasks",
-    "npm:@juicesharp/rpiv-ask-user-question"
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "git:github.com/earendil-works/pi-review"
   ],
   "defaultThinkingLevel": "medium",
   "hideThinkingBlock": false,

@@ -31,7 +31,7 @@ chezmoi = "latest"
 starship = "latest"
 markdownlint-cli2 = "latest"
 fd = "latest"
-node = "22.6.0"
+node = "24"
 1password = "latest"
 github-cli = "latest"
 "pipx:ansible" = { version = "latest", uvx = "false", pipx_args = "--include-deps" }
