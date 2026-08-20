@@ -14,15 +14,15 @@ return {
     }
 
     local Terminal = require('toggleterm.terminal').Terminal
-    local lazygit = Terminal:new { cmd = 'lazygit', hidden = true, float_opts = { border = 'curved' } }
+    -- local lazygit = Terminal:new { cmd = 'lazygit', hidden = true, float_opts = { border = 'curved' } }
 
-    function _lazygit_toggle()
-      lazygit:toggle()
-    end
+    -- function _lazygit_toggle()
+    --   lazygit:toggle()
+    -- end
   end,
   keys = {
     { [[<C-\>]] },
     { '<leader>0', '<Cmd>2ToggleTerm<Cr>', desc = 'Terminal #2' },
-    { '<leader>gg', '<cmd>lua _lazygit_toggle()<CR>', desc = 'LazyGit popup' },
+    -- { '<leader>gg', '<cmd>lua _lazygit_toggle()<CR>', desc = 'LazyGit popup' },
   },
 }
