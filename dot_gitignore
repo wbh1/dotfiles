@@ -8,6 +8,7 @@ Session.vim
 
 # Pi
 .pi-subagents/artifacts/
+.pi/
 
 # Mise
 mise.local.toml
