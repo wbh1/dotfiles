@@ -11,7 +11,7 @@ export default async function (pi: ExtensionAPI) {
   };
 
   try {
-    const response = await fetch("https://inference.labs.ai.linode.com/v1/models");
+    const response = await fetch("https://inference.labs.ai.linode.com/v1/models", { signal: AbortSignal.timeout(5000)});
     if (!response.ok) {
       throw new Error(`unexpected status ${response.status}`);
     }
