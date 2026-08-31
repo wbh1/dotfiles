@@ -2,11 +2,11 @@
   "name": "pi-extensions",
   "private": true,
   "dependencies": {
-    "@juicesharp/rpiv-ask-user-question": "^2.7.1",
-    "@narumitw/pi-usage": "^0.54.0",
+    "@juicesharp/rpiv-ask-user-question": "^2.8.0",
+    "@narumitw/pi-usage": "^0.59.0",
     "@tintinweb/pi-tasks": "^0.9.0",
-    "pi-autoresearch": "^1.6.2",
-    "pi-mcp-adapter": "^2.30.0",
-    "pi-subagents": "^0.58.0"
+    "pi-autoresearch": "^1.7.0",
+    "pi-mcp-adapter": "^2.31.0",
+    "pi-subagents": "^0.61.0"
   }
 }
