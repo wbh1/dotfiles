@@ -195,7 +195,7 @@ vicmec-disk(){
 kcfg () {
   local KCFG_JUMPBOX="jumpbox-iad3.linode.com"
   local selected
-  selected=$(find ~/.kube/*-configs/ -maxdepth 1 -type f 2>/dev/null | fzf --prompt="kubeconfig> " --height=40% --reverse --with-nth=-1 -d/)
+  selected=$(fd '.yaml$' ~/.kube/*-configs | fzf --prompt="kubeconfig> " --height=40% --reverse --with-nth=-1 -d/)
   if [[ -z "$selected" ]]
   then
     echo "No kubeconfig selected."
