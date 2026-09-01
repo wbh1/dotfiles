@@ -69,5 +69,8 @@ herdr = "latest"
 experimental = true
 idiomatic_version_file_enable_tools = ["node"]
 
+[settings.github]
+credential_command = 'gh auth token --hostname "$MISE_CREDENTIAL_HOST"'
+
 [settings.npm]
 bun = true
