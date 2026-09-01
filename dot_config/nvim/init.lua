@@ -503,6 +503,7 @@ require('lazy').setup({
         pyright = { autostart = false },
         ruff = {},
         ty = {},
+        taplo = {},
         yamlls = {
           autostart = true,
           settings = {
