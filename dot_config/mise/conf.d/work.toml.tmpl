@@ -1,4 +1,11 @@
+[tool_alias]
+kpp-cli = 'github:cns/kpp-services'
+kppctl = 'github:cns/kpp-services'
+
 [tools]
+kpp-cli = { version = "latest", api_url = "https://{{ .ghe_url }}/api/v3", matching = "kpp-cli", rename_exe = "kpp" }
+kppctl = { version = "latest", api_url = "https://{{ .ghe_url }}/api/v3", matching = "kppctl" }
+
 neovim = "0.11.7"
 teleport-community = "14.0.3"
 pint = "latest"
