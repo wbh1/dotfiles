@@ -64,6 +64,7 @@ java = "openjdk-21"
 yq = "4.52.4"
 pi = "latest"
 herdr = "latest"
+"aqua:nklmilojevic/sofka" = "latest"
 
 [settings]
 experimental = true
