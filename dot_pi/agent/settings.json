@@ -19,17 +19,6 @@
     },
     "npm:pi-autoresearch",
     "npm:@narumitw/pi-usage",
-    {
-      "source": "git:github.com/obra/superpowers",
-      "extensions": [
-        "+.pi/extensions/superpowers.ts"
-      ],
-      "skills": [
-        "-skills/writing-plans/SKILL.md",
-        "-skills/brainstorming/SKILL.md",
-        "-skills/writing-skills/SKILL.md"
-      ]
-    },
     "npm:@tintinweb/pi-tasks",
     "npm:@juicesharp/rpiv-ask-user-question",
     "git:github.com/earendil-works/pi-review"
