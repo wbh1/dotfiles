@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.0.0",
+  "lastChangelogVersion": "1.2.0",
   "theme": "nordfox",
   "defaultProvider": "github-copilot",
   "defaultModel": "gpt-6-luna",
@@ -60,5 +60,8 @@
       },
       "delegate": {}
     }
-  }
+  },
+  "extensions": [
+    "-builtin:mcp"
+  ]
 }
