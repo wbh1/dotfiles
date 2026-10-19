@@ -1,3 +1,5 @@
+-- ABOUTME: Configures Snacks features and their Neovim keymaps.
+-- ABOUTME: Registers editor toggles after the plugin finishes loading.
 return {
   'folke/snacks.nvim',
   priority = 1000,
@@ -183,6 +185,16 @@ return {
         Snacks.toggle.option('background', { off = 'light', on = 'dark', name = 'Dark Background' }):map '<leader>tb'
         Snacks.toggle.inlay_hints():map '<leader>th'
         Snacks.toggle.indent():map '<leader>tg'
+        Snacks.toggle.new {
+          id = 'autoformat',
+          name = 'Autoformat on Save',
+          get = function()
+            return not vim.g.disable_autoformat
+          end,
+          set = function(enabled)
+            vim.g.disable_autoformat = not enabled
+          end,
+        }:map '<leader>tf'
         -- Snacks.toggle.dim():map("<leader>tD")
       end,
     })

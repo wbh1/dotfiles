@@ -1,3 +1,5 @@
+-- ABOUTME: Configures Go language tooling and save-time formatting.
+-- ABOUTME: Sets up the Go plugin and its buffer-local integrations.
 return {
   "ray-x/go.nvim",
   dependencies = { -- optional packages
@@ -11,7 +13,9 @@ return {
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*.go",
       callback = function()
-        require('go.format').goimports()
+        if not vim.g.disable_autoformat then
+          require('go.format').goimports()
+        end
       end,
       group = format_sync_grp,
     })
