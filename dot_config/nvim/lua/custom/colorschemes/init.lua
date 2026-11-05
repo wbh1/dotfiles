@@ -1,5 +1,5 @@
 -- Check if omarchy theme exists
-local omarchy_theme_path = vim.fn.expand("~/.config/omarchy/current/theme/neovim.lua")
+local omarchy_theme_path = vim.fn.expand '~/.config/omarchy/current/theme/neovim.lua'
 local theme
 
 -- if vim.fn.filereadable(omarchy_theme_path) == 1 then
@@ -11,5 +11,5 @@ local theme
 --   -- local theme = require 'custom.colorschemes.nord';
 -- end
 
-theme = require("custom.colorschemes.nightfox")
+theme = require 'custom.colorschemes.tokyonight'
 return { theme }
