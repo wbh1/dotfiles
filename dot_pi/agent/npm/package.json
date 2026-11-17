@@ -7,6 +7,6 @@
     "@tintinweb/pi-tasks": "^0.9.1",
     "pi-autoresearch": "^1.9.0",
     "pi-mcp-adapter": "^7.0.1",
-    "pi-subagents": "^0.84.0"
+    "pi-subagents": "^0.85.0"
   }
 }
